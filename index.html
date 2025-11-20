@@ -63,7 +63,7 @@
             padding: 3rem 2.5rem;
             border-radius: 24px;
             text-align: center;
-            max-width: 500px;
+            max-width: 550px; /* Slightly wider for 4 buttons */
             width: 90%;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -107,54 +107,73 @@
 
         /* Buttons Container */
         .actions {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columns */
             gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
-        /* Button Styles */
+        /* Button Base Styles */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 200px; /* Makes buttons even width */
         }
 
-        /* WhatsApp Button */
+        /* WhatsApp */
         .btn-whatsapp {
-            background-color: rgba(37, 211, 102, 0.15);
+            background-color: rgba(37, 211, 102, 0.1);
             color: #25D366;
             border: 1px solid rgba(37, 211, 102, 0.2);
         }
-
         .btn-whatsapp:hover {
             background-color: #25D366;
             color: #0f172a;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px rgba(37, 211, 102, 0.4);
         }
 
-        /* Email Button */
+        /* Email */
         .btn-email {
-            background-color: rgba(248, 113, 113, 0.15);
+            background-color: rgba(248, 113, 113, 0.1);
             color: #f87171;
             border: 1px solid rgba(248, 113, 113, 0.2);
         }
-
         .btn-email:hover {
             background-color: #f87171;
             color: #0f172a;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px rgba(248, 113, 113, 0.4);
+        }
+
+        /* LinkedIn */
+        .btn-linkedin {
+            background-color: rgba(10, 102, 194, 0.1);
+            color: #0A66C2;
+            border: 1px solid rgba(10, 102, 194, 0.2);
+        }
+        .btn-linkedin:hover {
+            background-color: #0A66C2;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* Facebook */
+        .btn-facebook {
+            background-color: rgba(24, 119, 242, 0.1);
+            color: #1877F2;
+            border: 1px solid rgba(24, 119, 242, 0.2);
+        }
+        .btn-facebook:hover {
+            background-color: #1877F2;
+            color: #ffffff;
+            transform: translateY(-3px);
         }
 
         /* Tech Stack Dots (Decoration) */
@@ -172,12 +191,20 @@
             border-radius: 50%;
         }
 
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .actions {
+                grid-template-columns: 1fr; /* Stack buttons on very small screens */
+            }
+            h1 { font-size: 2rem; }
+            .profile-card { padding: 2rem 1.5rem; }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="profile-card">
-        <!-- Optional: You can add an <img> tag here for your profile picture if you want -->
         
         <h1>Hakim Qubati</h1>
         
@@ -190,14 +217,24 @@
         </p>
 
         <div class="actions">
-            <!-- WhatsApp Button -->
+            <!-- WhatsApp -->
             <a href="https://wa.me/967773030069" target="_blank" class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
 
-            <!-- Email Button -->
+            <!-- Email -->
             <a href="mailto:hakimahmed123321@gmail.com" class="btn btn-email">
-                <i class="fas fa-envelope"></i> Email Me
+                <i class="fas fa-envelope"></i> Email
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/hakim-ahmed-165106214/" target="_blank" class="btn btn-linkedin">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/alqubatiabdulhakim" target="_blank" class="btn btn-facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
             </a>
         </div>
 
