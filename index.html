@@ -1,816 +1,500 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="ar" dir="ltr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-    <meta property="og:type" content="website">
-    <meta name="author" content="Hakim Qubati">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakim Alqubati | Backend Architect</title>
-
-    <meta property="og:image"
-        content="https://media.licdn.com/dms/image/v2/D5603AQFQ1O5sTqULIg/profile-displayphoto-shrink_800_800/B56ZTDPFywGQAc-/0/1738442302060?e=1765411200&v=beta&t=lSwA9yALPSeePFk4_FBZhvMLEqMUeejH-IZGuHKSZiQ">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700;900&display=swap"
-        rel="stylesheet">
-
+    <title>Abdulhakim Ahmed - Resume</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <meta name="twitter:image"
-        content="https://media.licdn.com/dms/image/v2/D5603AQFQ1O5sTqULIg/profile-displayphoto-shrink_800_800/B56ZTDPFywGQAc-/0/1738442302060?e=1765411200&v=beta&t=lSwA9yALPSeePFk4_FBZhvMLEqMUeejH-IZGuHKSZiQ">
-
-    <link rel="shortcut icon"
-        href="https://media.licdn.com/dms/image/v2/D5603AQFQ1O5sTqULIg/profile-displayphoto-shrink_800_800/B56ZTDPFywGQAc-/0/1738442302060?e=1765411200&v=beta&t=lSwA9yALPSeePFk4_FBZhvMLEqMUeejH-IZGuHKSZiQ"
-        type="image/jpeg">
-
+    <!-- html2pdf.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enable class-based dark mode
+            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Orbitron', 'monospace'],
-                    },
                     colors: {
-                        bg: '#030508',
-                        cyan: '#00f3ff',
-                        purple: '#bc13fe',
-                        glass: 'rgba(15, 23, 42, 0.6)',
+                        primary: '#2563eb',
+                        secondary: '#475569',
+                        dark: '#0f172a',
+                        darkSurface: '#1e293b',
                     },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    fontFamily: {
+                        sans: ['Poppins', 'Cairo', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* --- BASE RESET & TRANSITIONS --- */
-        body {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            overflow: hidden;
-            /* Prevent main scroll */
-            cursor: none;
-            /* Hide default cursor */
-        }
-
-        /* --- CUSTOM CURSOR STYLES --- */
-        .cursor-dot,
-        .cursor-outline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .cursor-dot {
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
             width: 8px;
-            height: 8px;
-            background-color: #000;
-            /* Default (Light Mode) */
         }
 
-        html.dark .cursor-dot {
-            background-color: #00f3ff;
-            box-shadow: 0 0 10px #00f3ff;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
 
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            /* Default (Light Mode) */
-            transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
         }
 
-        html.dark .cursor-outline {
-            border: 1px solid rgba(0, 243, 255, 0.5);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
-        /* Cursor Hover State */
-        body.hovering .cursor-outline {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(0, 0, 0, 0.05);
-            border-color: #000;
-            backdrop-filter: blur(1px);
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
         }
 
-        html.dark body.hovering .cursor-outline {
-            background-color: rgba(0, 243, 255, 0.1);
-            border-color: #00f3ff;
-            backdrop-filter: blur(2px);
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+ 
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
         }
 
-        /* --- RIPPLE CLICK EFFECT --- */
-        .ripple {
-            position: fixed;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.2);
-            transform: scale(0);
-            animation: ripple-anim 0.6s linear;
-            pointer-events: none;
-            z-index: 9998;
-        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-        html.dark .ripple {
-            background: rgba(0, 243, 255, 0.4);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
-        }
-
-        @keyframes ripple-anim {
             to {
-                transform: scale(4);
-                opacity: 0;
+                opacity: 1;
+                transform: translateY(0);
             }
-        }
-
-        /* --- SPACE BACKGROUND (Only visible in Dark Mode) --- */
-        .space-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: #f3f4f6;
-            /* Light Mode Background */
-            transition: background 0.5s ease;
-        }
-
-        html.dark .space-bg {
-            background:
-                radial-gradient(circle at center, rgba(28, 25, 56, 0.4) 0%, rgba(3, 5, 8, 1) 100%),
-                url('https://www.script-tutorials.com/demos/360/images/stars.png');
-        }
-
-        /* Particles only visible in dark mode */
-        .particle {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            display: none;
-            /* Hidden in light mode */
-        }
-
-        html.dark .particle {
-            display: block;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-
-            100% {
-                transform: translateY(-100vh) translateX(50px);
-                opacity: 0;
-            }
-        }
-
-        /* --- CARD STYLES (Light vs Dark) --- */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            color: #1a202c;
-        }
-
-        html.dark .glass-card {
-            background: rgba(13, 18, 30, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            color: #cbd5e1;
-        }
-
-        /* --- NAV BUTTONS --- */
-        .nav-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .nav-btn::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #00f3ff;
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        /* Light Mode Active Nav */
-        .nav-btn.active {
-            background: rgba(0, 0, 0, 0.05);
-            color: #000;
-            font-weight: 600;
-        }
-
-        .nav-btn.active::before {
-            transform: scaleY(1);
-            background: #000;
-        }
-
-        /* Dark Mode Active Nav */
-        html.dark .nav-btn.active {
-            background: linear-gradient(90deg, rgba(0, 243, 255, 0.1) 0%, transparent 100%);
-            color: white;
-        }
-
-        html.dark .nav-btn.active::before {
-            background: #00f3ff;
-        }
-
-        /* --- SCROLLBAR --- */
-        .cyber-scroll::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .cyber-scroll::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .cyber-scroll::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 10px;
-        }
-
-        html.dark .cyber-scroll::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        html.dark .cyber-scroll::-webkit-scrollbar-thumb {
-            background: #00f3ff;
-        }
-
-        /* --- TAB TRANSITIONS --- */
-        .tab-pane {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        .tab-pane.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Toggle Button Style */
-        .theme-toggle-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            color: #333;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        html.dark .theme-toggle-btn {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fbbf24;
-            /* Yellow/Gold for sun/moon */
-            box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
         }
     </style>
 </head>
 
-<body
-    class="h-screen w-screen flex flex-col md:flex-row font-sans text-sm md:text-base bg-gray-100 dark:bg-[#030508] text-gray-800 dark:text-gray-300 transition-colors duration-300">
+<body class="bg-gray-50 text-gray-800 font-sans transition-colors duration-300 dark:bg-dark dark:text-gray-100">
 
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
-    <div class="cursor-dot hidden md:block" id="cursor-dot"></div>
-    <div class="cursor-outline hidden md:block" id="cursor-outline"></div>
-
-    <div class="space-bg">
-        <div id="particles-container"></div>
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50 no-print">
+        <button id="themeToggle"
+            class="p-3 bg-white dark:bg-darkSurface text-gray-800 dark:text-yellow-400 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 border border-gray-200 dark:border-gray-700"
+            title="Toggle Theme">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+        </button>
+        <button onclick="downloadPDF()"
+            class="p-3 bg-green-600 text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+            title="Download PDF">
+            <i class="fas fa-file-download"></i>
+        </button>
+       
     </div>
 
-    <button id="theme-toggle"
-        class="theme-toggle-btn fixed top-4 right-20 md:right-8 z-[60] w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hoverable-element">
-        <i class="fas fa-moon text-lg" id="theme-icon"></i>
-    </button>
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto my-8 p-4 md:p-8">
 
-    <aside
-        class="glass-card w-full md:w-80 z-20 flex flex-col border-r border-gray-200 dark:border-white/10 h-24 md:h-full relative shrink-0">
+        <!-- Resume Card -->
+        <div id="cv-content"
+            class="bg-white dark:bg-darkSurface shadow-xl rounded-2xl overflow-hidden fade-in transition-colors duration-300 border border-gray-100 dark:border-gray-700">
 
-        <div
-            class="p-6 flex md:flex-col items-center gap-5 border-b border-gray-200 dark:border-white/10 hoverable-element">
-            <div class="relative">
-                <div class="absolute inset-0 bg-cyan rounded-full blur opacity-20 animate-pulse-slow"></div>
-                <img src="https://media.licdn.com/dms/image/v2/D5603AQFQ1O5sTqULIg/profile-displayphoto-shrink_800_800/B56ZTDPFywGQAc-/0/1738442302060?e=1765411200&v=beta&t=lSwA9yALPSeePFk4_FBZhvMLEqMUeejH-IZGuHKSZiQ"
-                    alt="Profile"
-                    class="relative w-16 h-16 md:w-32 md:h-32 rounded-full object-cover border-2 border-gray-300 dark:border-cyan/30 p-1">
+            <!-- Header / Hero Section -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-12 relative overflow-hidden">
+                <!-- Decorative Circles -->
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-10 rounded-full"></div>
+                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-32 h-32 bg-white opacity-10 rounded-full"></div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center relative z-10">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-2 tracking-tight">Abdulhakim Ahmed</h1>
+                        <h2 class="text-xl md:text-2xl text-blue-100 font-light mb-6">Web Full Stack Developer</h2>
+
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm md:text-base">
+                            <a href="mailto:hakimahmed123321@gmail.com"
+                                class="flex items-center gap-2 hover:text-blue-200 transition-colors bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-envelope"></i> hakimahmed123321@gmail.com
+                            </a>
+                            <a href="tel:+967773030069"
+                                class="flex items-center gap-2 hover:text-blue-200 transition-colors bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-phone"></i> +967 773 030 069
+                            </a>
+                            <div class="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-map-marker-alt"></i> Hail St. Sanaa, Yemen
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Avatar / Initials Placeholder -->
+                    <div
+                        class="mt-6 md:mt-0 w-32 h-32 bg-white text-primary rounded-full flex items-center justify-center text-4xl font-bold shadow-lg border-4 border-blue-400/30">
+                        AA
+                    </div>
+                </div>
             </div>
-            <div class="text-left md:text-center">
-                <h1 class="font-mono font-bold text-gray-900 dark:text-white text-lg md:text-xl tracking-wider">Hakim
-                    Alqubati</h1>
-                <p class="text-gray-500 dark:text-gray-400 text-xs uppercase mt-1 tracking-widest">BASED IN THE CLOUD 🚀
-                </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+
+                <!-- Left Sidebar (Skills & Personal) -->
                 <div
-                    class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20">
-                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                    <span class="text-[10px] text-green-600 dark:text-green-400 font-mono">ONLINE</span>
-                </div>
-            </div>
-        </div>
+                    class="md:col-span-4 bg-gray-50 dark:bg-slate-800/50 p-6 md:p-8 border-r border-gray-100 dark:border-gray-700">
 
-        <nav class="hidden md:flex flex-col flex-1 py-6 space-y-1">
-            <button onclick="showTab('overview')"
-                class="nav-btn active w-full text-left px-8 py-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition hoverable-element"
-                id="nav-overview">
-                <i class="fas fa-terminal w-6 text-center"></i> <span class="font-mono">SYSTEM OVERVIEW</span>
-            </button>
-            <button onclick="showTab('skills')"
-                class="nav-btn w-full text-left px-8 py-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition hoverable-element"
-                id="nav-skills">
-                <i class="fas fa-code-branch w-6 text-center"></i> <span class="font-mono">TECH ARSENAL</span>
-            </button>
-            <button onclick="showTab('experience')"
-                class="nav-btn w-full text-left px-8 py-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition hoverable-element"
-                id="nav-experience">
-                <i class="fas fa-briefcase w-6 text-center"></i> <span class="font-mono">MISSION LOG</span>
-            </button>
-            <button onclick="showTab('education')"
-                class="nav-btn w-full text-left px-8 py-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition hoverable-element"
-                id="nav-education">
-                <i class="fas fa-graduation-cap w-6 text-center"></i> <span class="font-mono">KNOWLEDGE BASE</span>
-            </button>
-        </nav>
-
-        <div class="hidden md:block p-6 border-t border-gray-200 dark:border-white/10">
-            <div class="text-[10px] text-gray-500 dark:text-gray-600 font-mono text-center">
-                SECURE CONNECTION ESTABLISHED<br>
-                IP: 127.0.0.1 :: SANA'A
-            </div>
-        </div>
-    </aside>
-
-    <div
-        class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-[#050810] border-t border-gray-200 dark:border-white/10 z-50 flex justify-around py-4 backdrop-blur-md transition-colors">
-        <button onclick="showTab('overview')" class="text-gray-400 hover:text-cyan hoverable-element"><i
-                class="fas fa-terminal text-xl"></i></button>
-        <button onclick="showTab('skills')" class="text-gray-400 hover:text-cyan hoverable-element"><i
-                class="fas fa-code-branch text-xl"></i></button>
-        <button onclick="showTab('experience')" class="text-gray-400 hover:text-cyan hoverable-element"><i
-                class="fas fa-briefcase text-xl"></i></button>
-        <button onclick="showTab('education')" class="text-gray-400 hover:text-cyan hoverable-element"><i
-                class="fas fa-graduation-cap text-xl"></i></button>
-    </div>
-
-    <main class="flex-1 relative h-[calc(100vh-6rem)] md:h-screen overflow-hidden">
-
-        <div
-            class="absolute top-0 left-0 w-full h-16 border-b border-gray-200 dark:border-white/5 flex items-center justify-between px-8 z-10 bg-white/50 dark:bg-bg/50 backdrop-blur-sm transition-colors">
-
-            <div class="flex items-center gap-2 mr-12 md:mr-0">
-                <i class="fas fa-satellite-dish text-purple-600 dark:text-purple-500 animate-pulse"></i>
-            </div>
-        </div>
-
-        <div class="h-full pt-20 pb-8 px-6 md:px-12 overflow-y-auto cyber-scroll">
-
-            <div id="overview" class="tab-pane active max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 font-mono leading-tight">
-                    BUILDING <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan dark:to-purple">SCALABLE</span><br>
-                    FUTURE SYSTEMS
-                </h2>
-
-                <div class="glass-card p-8 rounded-2xl border-l-4 border-cyan mb-8 hoverable-element">
-                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        I am a Backend Architect & SaaS Specialist focused on
-                        <span class="text-cyan-700 dark:text-cyan font-semibold">Clean Code</span>, high-performance
-                        systems, and secure architecture.
-                        I design complex databases and scalable solutions for the next generation of applications.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div
-                        class="glass-card p-6 rounded-xl text-center group hover:border-cyan/50 transition duration-300 hoverable-element">
-                        <div
-                            class="w-12 h-12 mx-auto bg-cyan/10 rounded-full flex items-center justify-center mb-4 text-cyan-700 dark:text-cyan group-hover:scale-110 transition">
-                            <i class="fas fa-shield-halved text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">Secure Architecture</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Embedded security protocols.</p>
+                    <!-- Objective -->
+                    <div class="mb-8">
+                        <h3
+                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
+                            <i class="fas fa-bullseye mr-2"></i>Career Objective
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-justify">
+                            I am eager to provide my best and develop my skills in my major as a web full-stack and
+                            backend developer in any particular position that meets the needs of the organization or
+                            corporation that I will work for.
+                        </p>
                     </div>
-                    <div
-                        class="glass-card p-6 rounded-xl text-center group hover:border-purple/50 transition duration-300 hoverable-element">
-                        <div
-                            class="w-12 h-12 mx-auto bg-purple/10 rounded-full flex items-center justify-center mb-4 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition">
-                            <i class="fas fa-bolt text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">High Performance</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Optimized for extreme speed.</p>
-                    </div>
-                    <div
-                        class="glass-card p-6 rounded-xl text-center group hover:border-blue-400/50 transition duration-300 hoverable-element">
-                        <div
-                            class="w-12 h-12 mx-auto bg-blue-400/10 rounded-full flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition">
-                            <i class="fas fa-database text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">Scalable DBs</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Complex SQL & Design.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="skills" class="tab-pane max-w-5xl mx-auto">
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="text-cyan-700 dark:text-cyan font-mono text-2xl font-bold">01.</span>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">TECHNICAL ARSENAL</h2>
-                    <div class="h-px bg-gray-300 dark:bg-white/10 flex-1"></div>
-                </div>
 
-                <div class="grid grid-cols-1 gap-6">
+                    <!-- Technical Skills -->
+                    <div class="mb-8 page-break">
+                        <h3
+                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
+                            <i class="fas fa-code mr-2"></i>Tech Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Laravel</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">FilamentPHP</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Python</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">API
+                                Design</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">AWS
+                                (EC2, RDS, S3)</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Linux
+                                Admin</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">CI/CD
+                                Pipelines</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">VPS
+                                Mgmt</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">MySQL</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Complex
+                                SQL</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Automation</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">AI
+                                Dev</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Web
+                                Front</span>
+                            <span
+                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Git
+                                & GitHub</span>
+                        </div>
+                    </div>
 
-                    <div
-                        class="glass-card p-1 rounded-xl hover:shadow-[0_0_20px_rgba(0,243,255,0.15)] transition duration-500 hoverable-element group">
-                        <div class="bg-white/50 dark:bg-black/20 p-6 rounded-lg relative overflow-hidden h-full">
-                            <div
-                                class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-400 to-transparent opacity-50 group-hover:opacity-100 transition">
+                    <!-- Personal Skills -->
+                    <div class="mb-8 page-break">
+                        <h3
+                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
+                            <i class="fas fa-user-check mr-2"></i>Soft Skills
+                        </h3>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Ability to work under pressure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Multi-tasking capabilities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Excellent communication skills</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Quick learner & adaptable</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Integrating third-party software</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="mb-8">
+                        <h3
+                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
+                            <i class="fas fa-language mr-2"></i>Languages
+                        </h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="font-semibold">Arabic</span>
+                                    <span class="text-gray-500 dark:text-gray-400">Native</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+                                </div>
                             </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="font-semibold">English</span>
+                                    <span class="text-gray-500 dark:text-gray-400">Professional</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                </div>
+
+                <!-- Right Content (Experience & Education) -->
+                <div class="md:col-span-8 p-6 md:p-8">
+
+                    <!-- Work History -->
+                    <div class="mb-10">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-primary p-2 rounded-lg mr-3">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </span>
+                            Work History
+                        </h3>
+
+                        <div class="relative border-l-2 border-blue-100 dark:border-blue-900 ml-3 space-y-8">
+
+                            <!-- Job New (NLT) -->
+                            <div class="ml-6 relative group page-break">
                                 <div
-                                    class="w-14 h-14 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:scale-110 transition">
-                                    <i class="fas fa-laptop-code text-2xl text-blue-600 dark:text-blue-400"></i>
+                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
                                 </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-center mb-3">
-                                        <h3
-                                            class="text-lg font-bold text-gray-900 dark:text-white font-mono tracking-wider">
-                                            VISUAL INTERFACE (Frontend)</h3>
-                                        <span
-                                            class="text-[10px] px-2 py-1 rounded border border-blue-500/30 text-blue-600 dark:text-blue-400 bg-blue-500/5 font-mono">UI/UX
-                                            MODULE</span>
-                                    </div>
-                                    <div class="flex flex-wrap gap-3">
-                                        <span
-                                            class="px-3 py-1.5 bg-gray-100 dark:bg-[#1a202c] border border-gray-300 dark:border-gray-600 rounded text-xs font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2 hover:border-blue-400 transition">
-                                            <i class="fab fa-html5 text-orange-500"></i> HTML5
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-gray-100 dark:bg-[#1a202c] border border-gray-300 dark:border-gray-600 rounded text-xs font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2 hover:border-blue-400 transition">
-                                            <i class="fab fa-css3 text-blue-500"></i> Tailwind CSS
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-gray-100 dark:bg-[#1a202c] border border-gray-300 dark:border-gray-600 rounded text-xs font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2 hover:border-blue-400 transition">
-                                            <i class="fab fa-js text-yellow-400"></i> JavaScript
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-gray-100 dark:bg-[#1a202c] border border-gray-300 dark:border-gray-600 rounded text-xs font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2 hover:border-blue-400 transition">
-                                            <i class="fab fa-bootstrap text-purple-500"></i> Bootstrap
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-gray-100 dark:bg-[#1a202c] border border-gray-300 dark:border-gray-600 rounded text-xs font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2 hover:border-blue-400 transition">
-                                            <i class="fas fa-mobile-alt text-gray-400"></i> Responsive
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="glass-card p-1 rounded-xl hover:shadow-[0_0_20px_rgba(188,19,254,0.15)] transition duration-500 hoverable-element group">
-                        <div class="bg-white/50 dark:bg-black/20 p-6 rounded-lg relative overflow-hidden h-full">
-                            <div
-                                class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-transparent opacity-50 group-hover:opacity-100 transition">
-                            </div>
-
-                            <div class="flex flex-col md:flex-row md:items-center gap-6">
                                 <div
-                                    class="w-14 h-14 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 border border-purple-500/20 group-hover:scale-110 transition">
-                                    <i class="fas fa-server text-2xl text-purple-600 dark:text-purple-400"></i>
+                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                        <div>
+                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Backend
+                                                Architect & Web Full-Stack</h4>
+                                            <div class="text-primary font-medium">NLT Software Company</div>
+                                        </div>
+                                        <div
+                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
+                                            10/2023 - Present
+                                        </div>
+                                    </div>
+                                    <ul class="space-y-2 mt-3 text-sm text-gray-600 dark:text-gray-300">
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Analyzed, architected, and developed the Workbench ERP system.
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Built corporate profile websites and product landing pages.
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Developed AI assistant scripts to enhance the Workbench ERP system.
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="flex-1">
-                                    <div class="flex justify-between items-center mb-3">
-                                        <h3
-                                            class="text-lg font-bold text-gray-900 dark:text-white font-mono tracking-wider">
-                                            CORE ARCHITECTURE (Backend)</h3>
-                                        <span
-                                            class="text-[10px] px-2 py-1 rounded border border-purple-500/30 text-purple-600 dark:text-purple-400 bg-purple-500/5 font-mono">PRIMARY
-                                            SYSTEM</span>
+                            </div>
+
+                            <!-- Job 1 -->
+                            <div class="ml-6 relative group page-break">
+                                <div
+                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                        <div>
+                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Web Full-Stack
+                                                Developer</h4>
+                                            <div class="text-primary font-medium">Smart Life Software Company</div>
+                                        </div>
+                                        <div
+                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
+                                            10/2022 - 09/2023
+                                        </div>
                                     </div>
-                                    <div class="grid grid-cols-2 md:flex md:flex-wrap gap-3">
-                                        <span
-                                            class="px-3 py-1.5 bg-purple-50 dark:bg-[#1a202c] border border-purple-200 dark:border-purple-500/30 rounded text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-2 hover:bg-purple-100 dark:hover:bg-purple-500/20 transition">
-                                            <i class="fab fa-laravel"></i> Laravel
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-purple-50 dark:bg-[#1a202c] border border-purple-200 dark:border-purple-500/30 rounded text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-2 hover:bg-purple-100 dark:hover:bg-purple-500/20 transition">
-                                            <i class="fab fa-php"></i> PHP
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-purple-50 dark:bg-[#1a202c] border border-purple-200 dark:border-purple-500/30 rounded text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-2 hover:bg-purple-100 dark:hover:bg-purple-500/20 transition">
-                                            <i class="fas fa-cube"></i> FilamentPHP
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-purple-50 dark:bg-[#1a202c] border border-purple-200 dark:border-purple-500/30 rounded text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-2 hover:bg-purple-100 dark:hover:bg-purple-500/20 transition">
-                                            <i class="fab fa-python"></i> Python
-                                        </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-purple-50 dark:bg-[#1a202c] border border-purple-200 dark:border-purple-500/30 rounded text-xs font-bold text-purple-800 dark:text-purple-300 flex items-center gap-2 hover:bg-purple-100 dark:hover:bg-purple-500/20 transition">
-                                            <i class="fas fa-microchip"></i> API Design
-                                        </span>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-3 leading-relaxed">
+                                        Contributor on developing integrated ERP system "Smart ERP" with the addition
+                                        and development of two separate modules:
+                                    </p>
+                                    <ul
+                                        class="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm mt-2 ml-1">
+                                        <li>Fixed assets management system</li>
+                                        <li>Restaurant manufacturing system</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Job 3 -->
+                            <div class="ml-6 relative group page-break">
+                                <div
+                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                        <div>
+                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Backend and Web
+                                                Developer</h4>
+                                            <div class="text-primary font-medium">Yottagate Software Company</div>
+                                        </div>
+                                        <div
+                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
+                                            10/2019 - 03/2022
+                                        </div>
                                     </div>
+                                    <ul class="space-y-2 mt-3 text-sm text-gray-600 dark:text-gray-300">
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Contributor with developing BawbtMIC system for schools (School Management
+                                            System).
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Developed admin panels and REST APIs for the mobile application.
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Built many internal systems for Yottagate company and its clients.
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2 mt-1">•</span>
+                                            Performed database design and optimization tasks.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-primary p-2 rounded-lg mr-3">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </span>
+                            Education
+                        </h3>
+
+                        <div class="grid grid-cols-1 gap-4">
+                            <!-- Degree 1 -->
+                            <div
+                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-primary shadow-sm hover:shadow-md transition-all">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 dark:text-white">Bachelor of Computer
+                                            Programming</h4>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Sanaa Community College</p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2019</span>
+                                </div>
+                            </div>
+
+                            <!-- Degree 2 -->
+                            <div
+                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-blue-400 shadow-sm hover:shadow-md transition-all">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 dark:text-white">Diploma in English</h4>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Sanaa Community College</p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2017</span>
+                                </div>
+                            </div>
+
+                            <!-- Degree 3 -->
+                            <div
+                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-gray-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 dark:text-white">High School</h4>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm">General Secondary Education
+                                        </p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2013</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                        <div
-                            class="glass-card p-5 rounded-xl hover:border-green-500/50 transition hoverable-element group">
-                            <h3
-                                class="text-green-600 dark:text-green-400 font-mono text-sm mb-4 flex items-center gap-2 border-b border-gray-200 dark:border-white/5 pb-2">
-                                <i class="fas fa-network-wired"></i> DEVOPS & INFRA
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-green-500 hover:border-green-500/50 transition cursor-default">
-                                    AWS (EC2, RDS, S3)
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-green-500 hover:border-green-500/50 transition cursor-default">
-                                    Linux Admin
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-green-500 hover:border-green-500/50 transition cursor-default">
-                                    CI/CD Pipelines
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-green-500 hover:border-green-500/50 transition cursor-default">
-                                    VPS Mgmt
-                                </span>
-                            </div>
-                        </div>
-
-                        <div
-                            class="glass-card p-5 rounded-xl hover:border-cyan-500/50 transition hoverable-element group">
-                            <h3
-                                class="text-cyan-600 dark:text-cyan font-mono text-sm mb-4 flex items-center gap-2 border-b border-gray-200 dark:border-white/5 pb-2">
-                                <i class="fas fa-database"></i> DATA & AI UNITS
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-cyan hover:border-cyan/50 transition cursor-default">
-                                    MySQL
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-cyan hover:border-cyan/50 transition cursor-default">
-                                    Complex SQL
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-cyan hover:border-cyan/50 transition cursor-default">
-                                    Automation
-                                </span>
-                                <span
-                                    class="px-2 py-1 bg-gray-50 dark:bg-[#151921] border border-gray-200 dark:border-white/10 rounded text-[11px] text-gray-600 dark:text-gray-400 hover:text-cyan hover:border-cyan/50 transition cursor-default">
-                                    AI Dev
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
-            <div id="experience" class="tab-pane max-w-4xl mx-auto">
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="text-cyan-700 dark:text-cyan font-mono text-2xl font-bold">02.</span>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">MISSION LOG</h2>
-                    <div class="h-px bg-gray-300 dark:bg-white/10 flex-1"></div>
-                </div>
-
-                <div class="relative border-l border-gray-300 dark:border-white/10 ml-4 space-y-10">
-                    <div class="relative pl-10 hoverable-element group">
-                        <div
-                            class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-cyan shadow-[0_0_10px_#00f3ff] group-hover:scale-150 transition duration-300">
-                        </div>
-
-                        <div
-                            class="glass-card p-6 rounded-lg border border-gray-200 dark:border-white/5 group-hover:border-cyan/30 transition duration-300">
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Backend Engineer
-                                    </h3>
-                                    <div class="flex items-center gap-2 mt-1">
-                                        <span class="text-cyan-700 dark:text-cyan font-mono text-sm">NLT Company</span>
-                                        <span class="text-gray-400 text-xs">|</span>
-                                        <a href="#"
-                                            class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white text-xs underline decoration-dotted">workbencherp.com</a>
-                                    </div>
-                                </div>
-                                <span
-                                    class="mt-3 md:mt-0 px-3 py-1 bg-cyan/10 text-cyan-700 dark:text-cyan border border-cyan/20 rounded text-[10px] font-mono tracking-wide">
-                                    AUG 2024 – PRESENT
-                                </span>
-                            </div>
-                            <ul
-                                class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400 text-sm marker:text-cyan">
-                                <li>Backend development for Workbench ERP.</li>
-                                <li>Architecture design and performance tuning.</li>
-                                <li>Database management and optimization.</li>
-                                <li>Deployment support and infrastructure operations.</li>
-                                <li>Automation scripting for improved reliability.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <!-- Footer -->
+            <div
+                class="bg-gray-100 dark:bg-slate-900 text-center p-4 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+                &copy; 2025 Abdulhakim Ahmed - Web Full Stack Developer
             </div>
-
-            <div id="education" class="tab-pane max-w-4xl mx-auto">
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="text-cyan-700 dark:text-cyan font-mono text-2xl font-bold">03.</span>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">ACADEMIC DATA</h2>
-                    <div class="h-px bg-gray-300 dark:bg-white/10 flex-1"></div>
-                </div>
-
-                <div class="space-y-4">
-                    <div
-                        class="glass-card p-6 rounded-xl flex items-center gap-6 hoverable-element hover:border-purple/50 transition">
-                        <div
-                            class="w-12 h-12 bg-purple/10 rounded-full flex items-center justify-center shrink-0 text-purple-600 dark:text-purple-400">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Bachelor of Technical Education
-                            </h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm">Sana’a Community College | Software
-                                Development</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="glass-card p-6 rounded-xl flex items-center gap-6 hoverable-element hover:border-blue-500/50 transition">
-                        <div
-                            class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-500">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Higher Diploma in Software
-                                Development</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm">Sana’a Community College</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
     <script>
-        // --- THEME TOGGLE LOGIC ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
         // Check local storage
-        if (localStorage.getItem('theme') === 'light') {
-            htmlElement.classList.remove('dark');
-            updateIcon(false);
-        } else {
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlElement.classList.add('dark');
-            updateIcon(true);
+        } else {
+            htmlElement.classList.remove('dark');
         }
 
         themeToggleBtn.addEventListener('click', () => {
-            htmlElement.classList.toggle('dark');
-            const isDark = htmlElement.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateIcon(isDark);
-        });
-
-        function updateIcon(isDark) {
-            if (isDark) {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
             } else {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
             }
-        }
-
-
-        // 1. TAB SWITCHING LOGIC
-        function showTab(tabId) {
-            // Hide all panes
-            document.querySelectorAll('.tab-pane').forEach(el => {
-                el.classList.remove('active');
-            });
-            // Show target pane (with slight delay for animation reset if needed)
-            setTimeout(() => {
-                document.getElementById(tabId).classList.add('active');
-            }, 50);
-
-            // Update Nav Buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.classList.remove('text-white'); // Remove explicit white
-            });
-
-            // Active Nav Button
-            const activeBtn = document.getElementById('nav-' + tabId);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-        }
-
-        // 2. CUSTOM CURSOR LOGIC
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
-
-        // Movement
-        window.addEventListener('mousemove', function (e) {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            // Dot follows instantly
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            // Outline follows with delay (using simple animation via CSS transition or JS)
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
         });
 
-        // Hover Effects (Interactables)
-        const interactables = document.querySelectorAll('a, button, .hoverable-element');
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.body.classList.add('hovering');
-            });
-            el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('hovering');
-            });
-        });
+        // PDF Download Logic
+        function downloadPDF() {
+            // Select the content to download (ID added to the resume card)
+            const element = document.getElementById('cv-content');
 
-        // 3. RIPPLE CLICK EFFECT
-        document.addEventListener('click', function (e) {
-            // Create ripple element
-            let ripple = document.createElement('div');
-            ripple.classList.add('ripple');
-            document.body.appendChild(ripple);
+            // Calculate width and height dynamically to force a single page
+            const opt = {
+                margin: 0, // Zero margin as requested
+                filename: 'Abdulhakim_Ahmed_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
+                // Use 'px' unit and set format to the element's scroll dimensions
+                // This creates a custom PDF size matching the resume content exactly
+                jsPDF: { unit: 'px', format: [element.offsetWidth, element.scrollHeight], orientation: 'portrait' }
+            };
 
-            // Set position
-            // Size is arbitrary, let's make it start small at cursor
-            let size = 20;
-            ripple.style.width = size + 'px';
-            ripple.style.height = size + 'px';
-            ripple.style.left = e.clientX - (size / 2) + 'px';
-            ripple.style.top = e.clientY - (size / 2) + 'px';
-
-            // Remove after animation
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-
-        // 4. BACKGROUND PARTICLES (Only visible in dark mode via CSS)
-        const container = document.getElementById('particles-container');
-        for (let i = 0; i < 20; i++) {
-            let p = document.createElement('div');
-            p.classList.add('particle');
-            p.style.left = Math.random() * 100 + 'vw';
-            p.style.top = Math.random() * 100 + 'vh';
-            p.style.width = Math.random() * 3 + 'px';
-            p.style.height = p.style.width;
-            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            p.style.animationDelay = Math.random() * 5 + 's';
-            container.appendChild(p);
+            // Generate and Save
+            html2pdf().set(opt).from(element).save();
         }
     </script>
 </body>
