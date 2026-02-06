@@ -1,502 +1,669 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr" class="scroll-smooth">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulhakim Ahmed - Resume</title>
+    <title>Eng. Hakim Alqubati | Backend Architect</title>
+    
+    <!-- Fonts: Cairo for Arabic, Fira Code for Tech, Orbitron for Headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- html2pdf.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
 
+    <!-- Tailwind Config for Custom Colors -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563eb',
-                        secondary: '#475569',
-                        dark: '#0f172a',
-                        darkSurface: '#1e293b',
+                        cyber: {
+                            black: '#050505',
+                            dark: '#0a0a12',
+                            blue: '#00f3ff',
+                            purple: '#bd00ff',
+                            green: '#00ff41',
+                            glass: 'rgba(20, 20, 30, 0.6)'
+                        }
                     },
                     fontFamily: {
-                        sans: ['Poppins', 'Cairo', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        fira: ['Fira Code', 'monospace'],
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                     }
                 }
             }
         }
     </script>
+
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #050505; 
         }
-
         ::-webkit-scrollbar-thumb {
-            background: #888;
+            background: #00f3ff; 
             border-radius: 4px;
         }
-
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #bd00ff; 
         }
 
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            overflow-x: hidden;
         }
 
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
+        /* Neon Glow Effects */
+        .text-glow-blue { text-shadow: 0 0 10px rgba(0, 243, 255, 0.7); }
+        .text-glow-purple { text-shadow: 0 0 10px rgba(189, 0, 255, 0.7); }
+        .box-glow { box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
+        
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
         }
- 
-
-        /* Animation */
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
+        .glass-card:hover {
+            border-color: rgba(0, 243, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+            transform: translateY(-5px);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        /* Terminal Cursor Blink */
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Canvas for Three.js */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
         }
+
+        /* Timeline Line */
+        .timeline-line {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #00f3ff, #bd00ff);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* RTL support classes */
+        body[dir="rtl"] .timeline-line { left: 50%; }
+        body[dir="rtl"] { font-family: 'Cairo', sans-serif; }
+        body[dir="ltr"] { font-family: 'Inter', sans-serif; }
     </style>
 </head>
+<body class="antialiased selection:bg-cyber-blue selection:text-black" dir="ltr">
 
-<body class="bg-gray-50 text-gray-800 font-sans transition-colors duration-300 dark:bg-dark dark:text-gray-100">
+    <!-- Three.js Background -->
+    <canvas id="bg-canvas"></canvas>
 
-    <!-- Floating Action Buttons -->
-    <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50 no-print">
-        <button id="themeToggle"
-            class="p-3 bg-white dark:bg-darkSurface text-gray-800 dark:text-yellow-400 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 border border-gray-200 dark:border-gray-700"
-            title="Toggle Theme">
-            <i class="fas fa-moon dark:hidden"></i>
-            <i class="fas fa-sun hidden dark:block"></i>
-        </button>
-        <button onclick="downloadPDF()"
-            class="p-3 bg-green-600 text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-            title="Download PDF">
-            <i class="fas fa-file-download"></i>
-        </button>
-       
-    </div>
-
-    <!-- Main Container -->
-    <main class="max-w-5xl mx-auto my-8 p-4 md:p-8">
-
-        <!-- Resume Card -->
-        <div id="cv-content"
-            class="bg-white dark:bg-darkSurface shadow-xl rounded-2xl overflow-hidden fade-in transition-colors duration-300 border border-gray-100 dark:border-gray-700">
-
-            <!-- Header / Hero Section -->
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 md:p-12 relative overflow-hidden">
-                <!-- Decorative Circles -->
-                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-10 rounded-full"></div>
-                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-32 h-32 bg-white opacity-10 rounded-full"></div>
-
-                <div class="flex flex-col md:flex-row justify-between items-center relative z-10">
-                    <div class="text-center md:text-left">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-2 tracking-tight">Abdulhakim Ahmed</h1>
-                        <h2 class="text-xl md:text-2xl text-blue-100 font-light mb-6">Web Full Stack Developer</h2>
-
-                        <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm md:text-base">
-                            <a href="mailto:hakimahmed123321@gmail.com"
-                                class="flex items-center gap-2 hover:text-blue-200 transition-colors bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                <i class="fas fa-envelope"></i> hakimahmed123321@gmail.com
-                            </a>
-                            <a href="tel:+967773030069"
-                                class="flex items-center gap-2 hover:text-blue-200 transition-colors bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                <i class="fas fa-phone"></i> +967 773 030 069
-                            </a>
-                            <div class="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                <i class="fas fa-map-marker-alt"></i> Hail St. Sanaa, Yemen
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Avatar / Initials Placeholder -->
-                    <div
-                        class="mt-6 md:mt-0 w-32 h-32 bg-white text-primary rounded-full flex items-center justify-center text-4xl font-bold shadow-lg border-4 border-blue-400/30">
-                        AA
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-orbitron font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple">
+                &lt;HA /&gt;
+            </div>
+            
+            <div class="hidden md:flex space-x-8 rtl:space-x-reverse font-fira text-sm">
+                <a href="#about" class="hover:text-cyber-blue transition-colors" data-key="nav_about">About</a>
+                <a href="#skills" class="hover:text-cyber-blue transition-colors" data-key="nav_skills">Skills</a>
+                <a href="#experience" class="hover:text-cyber-blue transition-colors" data-key="nav_exp">Experience</a>
+                <a href="#projects" class="hover:text-cyber-blue transition-colors" data-key="nav_projects">Projects</a>
+                <a href="#contact" class="hover:text-cyber-blue transition-colors" data-key="nav_contact">Contact</a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+            <button id="lang-toggle" class="px-4 py-1 border border-cyber-green/50 text-cyber-green font-fira text-xs rounded hover:bg-cyber-green/10 transition-all flex items-center gap-2">
+                <i class="fas fa-globe"></i> <span id="lang-text">AR</span>
+            </button>
+        </div>
+    </nav>
 
-                <!-- Left Sidebar (Skills & Personal) -->
-                <div
-                    class="md:col-span-4 bg-gray-50 dark:bg-slate-800/50 p-6 md:p-8 border-r border-gray-100 dark:border-gray-700">
-
-                    <!-- Objective -->
-                    <div class="mb-8">
-                        <h3
-                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
-                            <i class="fas fa-bullseye mr-2"></i>Career Objective
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-justify">
-                            I am eager to provide my best and develop my skills in my major as a web full-stack and
-                            backend developer in any particular position that meets the needs of the organization or
-                            corporation that I will work for.
-                        </p>
-                    </div>
-
-                    <!-- Technical Skills -->
-                    <div class="mb-8 page-break">
-                        <h3
-                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
-                            <i class="fas fa-code mr-2"></i>Tech Skills
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Laravel</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">PHP</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">FilamentPHP</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Python</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">API
-                                Design</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">AWS
-                                (EC2, RDS, S3)</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Linux
-                                Admin</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">CI/CD
-                                Pipelines</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">VPS
-                                Mgmt</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">MySQL</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Complex
-                                SQL</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Automation</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">AI
-                                Dev</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Web
-                                Front</span>
-                            <span
-                                class="px-3 py-1 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm font-medium text-gray-700 dark:text-gray-200 shadow-sm">Git
-                                & GitHub</span>
-                        </div>
-                    </div>
-
-                    <!-- Personal Skills -->
-                    <div class="mb-8 page-break">
-                        <h3
-                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
-                            <i class="fas fa-user-check mr-2"></i>Soft Skills
-                        </h3>
-                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Ability to work under pressure</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Multi-tasking capabilities</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Excellent communication skills</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Quick learner & adaptable</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Integrating third-party software</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Languages -->
-                    <div class="mb-8">
-                        <h3
-                            class="text-lg font-bold uppercase tracking-wider text-primary mb-4 border-b-2 border-blue-200 dark:border-blue-800 pb-2 inline-block">
-                            <i class="fas fa-language mr-2"></i>Languages
-                        </h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span class="font-semibold">Arabic</span>
-                                    <span class="text-gray-500 dark:text-gray-400">Native</span>
-                                </div>
-                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span class="font-semibold">English</span>
-                                    <span class="text-gray-500 dark:text-gray-400">Professional</span>
-                                </div>
-                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right Content (Experience & Education) -->
-                <div class="md:col-span-8 p-6 md:p-8">
-
-                    <!-- Work History -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-primary p-2 rounded-lg mr-3">
-                                <i class="fas fa-briefcase text-xl"></i>
-                            </span>
-                            Work History
-                        </h3>
-
-                        <div class="relative border-l-2 border-blue-100 dark:border-blue-900 ml-3 space-y-8">
-
-                            <!-- Job New (NLT) -->
-                            <div class="ml-6 relative group page-break">
-                                <div
-                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
-                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                        <div>
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Backend
-                                                Architect & Web Full-Stack</h4>
-                                            <div class="text-primary font-medium">NLT Software Company</div>
-                                        </div>
-                                        <div
-                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
-                                            10/2023 - Present
-                                        </div>
-                                    </div>
-                                    <ul class="space-y-2 mt-3 text-sm text-gray-600 dark:text-gray-300">
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Analyzed, architected, and developed the Workbench ERP system.
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Built corporate profile websites and product landing pages.
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Developed AI assistant scripts to enhance the Workbench ERP system.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Job 1 -->
-                            <div class="ml-6 relative group page-break">
-                                <div
-                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
-                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                        <div>
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Web Full-Stack
-                                                Developer</h4>
-                                            <div class="text-primary font-medium">Smart Life Software Company</div>
-                                        </div>
-                                        <div
-                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
-                                            10/2022 - 09/2023
-                                        </div>
-                                    </div>
-                                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-3 leading-relaxed">
-                                        Contributor on developing integrated ERP system "Smart ERP" with the addition
-                                        and development of two separate modules:
-                                    </p>
-                                    <ul
-                                        class="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm mt-2 ml-1">
-                                        <li>Fixed assets management system</li>
-                                        <li>Restaurant manufacturing system</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Job 3 -->
-                            <div class="ml-6 relative group page-break">
-                                <div
-                                    class="absolute -left-[31px] bg-primary h-4 w-4 rounded-full border-4 border-white dark:border-darkSurface group-hover:scale-125 transition-transform">
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
-                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                        <div>
-                                            <h4 class="text-lg font-bold text-gray-800 dark:text-white">Backend and Web
-                                                Developer</h4>
-                                            <div class="text-primary font-medium">Yottagate Software Company</div>
-                                        </div>
-                                        <div
-                                            class="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded-full mt-2 sm:mt-0 inline-block text-center w-fit">
-                                            10/2019 - 03/2022
-                                        </div>
-                                    </div>
-                                    <ul class="space-y-2 mt-3 text-sm text-gray-600 dark:text-gray-300">
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Contributor with developing BawbtMIC system for schools (School Management
-                                            System).
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Developed admin panels and REST APIs for the mobile application.
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Built many internal systems for Yottagate company and its clients.
-                                        </li>
-                                        <li class="flex items-start">
-                                            <span class="text-primary mr-2 mt-1">•</span>
-                                            Performed database design and optimization tasks.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Education -->
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-primary p-2 rounded-lg mr-3">
-                                <i class="fas fa-graduation-cap text-xl"></i>
-                            </span>
-                            Education
-                        </h3>
-
-                        <div class="grid grid-cols-1 gap-4">
-                            <!-- Degree 1 -->
-                            <div
-                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-primary shadow-sm hover:shadow-md transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 dark:text-white">Bachelor of Computer
-                                            Programming</h4>
-                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Sanaa Community College</p>
-                                    </div>
-                                    <span
-                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2019</span>
-                                </div>
-                            </div>
-
-                            <!-- Degree 2 -->
-                            <div
-                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-blue-400 shadow-sm hover:shadow-md transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 dark:text-white">Diploma in English</h4>
-                                        <p class="text-gray-600 dark:text-gray-400 text-sm">Sanaa Community College</p>
-                                    </div>
-                                    <span
-                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2017</span>
-                                </div>
-                            </div>
-
-                            <!-- Degree 3 -->
-                            <div
-                                class="bg-white dark:bg-slate-800 p-4 rounded-lg border-l-4 border-gray-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 dark:text-white">High School</h4>
-                                        <p class="text-gray-600 dark:text-gray-400 text-sm">General Secondary Education
-                                        </p>
-                                    </div>
-                                    <span
-                                        class="text-sm font-semibold bg-gray-100 dark:bg-slate-700 px-3 py-1 rounded text-primary">2013</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="text-center z-10 px-4">
+            <p class="text-cyber-green font-fira mb-4" data-key="hero_greeting">Hello, World! I am</p>
+            <h1 class="text-5xl md:text-7xl font-orbitron font-black text-white mb-6 tracking-wider gs-reveal">
+                HAKIM <span class="text-cyber-blue text-glow-blue">ALQUBATI</span>
+            </h1>
+            <div class="text-xl md:text-3xl font-fira text-gray-400 h-10 mb-8 flex justify-center items-center gap-2">
+                <span class="text-cyber-purple">></span>
+                <span id="typewriter" class="text-white"></span>
+                <span class="blink text-cyber-green">_</span>
             </div>
-
-            <!-- Footer -->
-            <div
-                class="bg-gray-100 dark:bg-slate-900 text-center p-4 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
-                &copy; 2025 Abdulhakim Ahmed - Web Full Stack Developer
+            
+            <div class="flex justify-center gap-4 mt-8">
+                <a href="#projects" class="px-8 py-3 bg-cyber-blue/10 border border-cyber-blue text-cyber-blue font-fira hover:bg-cyber-blue hover:text-black transition-all duration-300 rounded" data-key="btn_projects">
+                    View Work
+                </a>
+                <a href="#contact" class="px-8 py-3 bg-transparent border border-white/20 text-white font-fira hover:border-cyber-purple hover:text-cyber-purple transition-all duration-300 rounded" data-key="btn_contact">
+                    Contact Me
+                </a>
             </div>
         </div>
-    </main>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-10 animate-bounce">
+            <i class="fas fa-chevron-down text-cyber-blue text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-12 flex items-center gap-4">
+                <span class="text-cyber-purple">01.</span> <span data-key="section_about">About Me</span>
+                <div class="h-[1px] bg-gray-700 flex-grow ml-4"></div>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="glass-card p-8 rounded-2xl relative gs-reveal-left">
+                    <div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-cyber-blue"></div>
+                    <div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-cyber-blue"></div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 font-light text-lg" data-key="about_desc">
+                        As a <strong class="text-cyber-blue">Backend Architect</strong>, I don't just write code; I design resilient, scalable systems that power the AI era. My passion lies in orchestration, microservices, and optimizing data flow. I turn complex logic into efficient, invisible engines.
+                    </p>
+                    <div class="flex flex-wrap gap-2 font-fira text-xs text-cyber-green">
+                        <span class="px-3 py-1 border border-cyber-green/30 rounded-full">#SystemDesign</span>
+                        <span class="px-3 py-1 border border-cyber-green/30 rounded-full">#Scalability</span>
+                        <span class="px-3 py-1 border border-cyber-green/30 rounded-full">#AI_Integration</span>
+                    </div>
+                </div>
+
+                <div class="relative group gs-reveal-right flex justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <!-- Placeholder for abstract tech image or profile -->
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-cyber-dark border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20">
+                            <!-- Matrix effect generated by JS logic conceptually -->
+                            <div class="col-span-1 row-span-1 border-r border-b border-cyber-green/50"></div>
+                            <!-- ... grid pattern ... -->
+                        </div>
+                        <i class="fas fa-network-wired text-6xl text-cyber-blue/50 group-hover:text-cyber-blue transition-colors duration-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills / Tech Stack Section -->
+    <section id="skills" class="py-20 px-4 bg-black/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-16 text-center">
+                <span class="text-cyber-green">02.</span> <span data-key="section_skills">Tech Architecture</span>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card Template -->
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fab fa-golang text-4xl mb-4 text-gray-400 group-hover:text-cyber-blue transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">GoLang</h3>
+                    <p class="text-xs text-gray-500 font-fira">High Concurrency</p>
+                </div>
+
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fab fa-python text-4xl mb-4 text-gray-400 group-hover:text-yellow-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">Python</h3>
+                    <p class="text-xs text-gray-500 font-fira">AI & Data</p>
+                </div>
+
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fab fa-docker text-4xl mb-4 text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">Docker</h3>
+                    <p class="text-xs text-gray-500 font-fira">Containerization</p>
+                </div>
+
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fas fa-cubes text-4xl mb-4 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">Kubernetes</h3>
+                    <p class="text-xs text-gray-500 font-fira">Orchestration</p>
+                </div>
+                
+                 <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fas fa-database text-4xl mb-4 text-gray-400 group-hover:text-green-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">PostgreSQL</h3>
+                    <p class="text-xs text-gray-500 font-fira">Relational DB</p>
+                </div>
+
+                 <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fas fa-bolt text-4xl mb-4 text-gray-400 group-hover:text-red-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">Redis</h3>
+                    <p class="text-xs text-gray-500 font-fira">Caching</p>
+                </div>
+
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fas fa-server text-4xl mb-4 text-gray-400 group-hover:text-purple-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">gRPC</h3>
+                    <p class="text-xs text-gray-500 font-fira">Microservices</p>
+                </div>
+
+                <div class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
+                    <i class="fab fa-aws text-4xl mb-4 text-gray-400 group-hover:text-orange-400 transition-colors"></i>
+                    <h3 class="font-orbitron font-bold text-white mb-2">AWS</h3>
+                    <p class="text-xs text-gray-500 font-fira">Cloud Infra</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative">
+             <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-16 text-center">
+                <span class="text-cyber-blue">03.</span> <span data-key="section_exp">Experience Log</span>
+            </h2>
+
+            <div class="timeline-line"></div>
+
+            <!-- Item 1 -->
+            <div class="relative flex justify-between items-center mb-12 w-full right-timeline group gs-reveal">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-cyber-black shadow-xl w-8 h-8 rounded-full border-2 border-cyber-blue group-hover:shadow-[0_0_15px_#00f3ff]">
+                    <div class="mx-auto font-semibold text-lg text-white"></div>
+                </div>
+                <div class="order-1 w-5/12 glass-card p-6 rounded-lg border-l-4 border-cyber-blue">
+                    <span class="text-cyber-blue font-fira text-sm">2023 - Present</span>
+                    <h3 class="font-bold text-xl text-white mt-1">Senior Backend Architect</h3>
+                    <p class="text-gray-400 text-sm mt-2">Leading microservices migration and integrating AI models into core infrastructure.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="relative flex justify-between items-center mb-12 w-full flex-row-reverse left-timeline group gs-reveal">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-cyber-black shadow-xl w-8 h-8 rounded-full border-2 border-cyber-purple group-hover:shadow-[0_0_15px_#bd00ff]">
+                    <div class="mx-auto font-semibold text-lg text-white"></div>
+                </div>
+                <div class="order-1 w-5/12 glass-card p-6 rounded-lg border-r-4 border-cyber-purple text-right" dir="ltr">
+                    <span class="text-cyber-purple font-fira text-sm">2020 - 2023</span>
+                    <h3 class="font-bold text-xl text-white mt-1">Backend Developer</h3>
+                    <p class="text-gray-400 text-sm mt-2">Developed scalable APIs using Python & Django. Optimized database queries for high traffic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+             <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-12">
+                <span class="text-cyber-purple">04.</span> <span data-key="section_projects">System Implementations</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-xl overflow-hidden group gs-reveal">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cyber-blue/10 group-hover:bg-transparent transition-all"></div>
+                        <!-- Mockup Visual -->
+                        <div class="w-full h-full flex items-center justify-center border-b border-white/10">
+                            <i class="fas fa-brain text-6xl text-gray-700 group-hover:text-cyber-blue group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyber-blue transition-colors">Neural API Gateway</h3>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
+                                <a href="#" class="hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4" data-key="proj_1_desc">A high-performance API gateway with AI-based traffic analysis and anomaly detection built in Go.</p>
+                        <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-purple">
+                            <li>Go</li>
+                            <li>gRPC</li>
+                            <li>TensorFlow</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-xl overflow-hidden group gs-reveal">
+                    <div class="h-48 bg-gray-900 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cyber-purple/10 group-hover:bg-transparent transition-all"></div>
+                        <div class="w-full h-full flex items-center justify-center border-b border-white/10">
+                            <i class="fas fa-cloud-upload-alt text-6xl text-gray-700 group-hover:text-cyber-purple group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyber-purple transition-colors">Distributed Cache System</h3>
+                            <div class="flex gap-4 text-gray-400">
+                                <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
+                                <a href="#" class="hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4" data-key="proj_2_desc">Custom implementation of a distributed caching mechanism using consistent hashing.</p>
+                        <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-blue">
+                            <li>Rust</li>
+                            <li>Redis</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Terminal Section -->
+    <section id="contact" class="py-20 px-4 flex justify-center">
+        <div class="w-full max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-8 text-center">
+                <span class="text-cyber-green">05.</span> <span data-key="section_contact">Initialize Handshake</span>
+            </h2>
+
+            <div class="bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden font-fira text-sm md:text-base">
+                <!-- Terminal Header -->
+                <div class="bg-gray-900 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="ml-4 text-gray-400 text-xs">hakim@server:~/contact</div>
+                </div>
+
+                <!-- Terminal Body -->
+                <div class="p-6 text-gray-300">
+                    <div class="mb-4">
+                        <span class="text-cyber-green">root@hakim:~$</span> ./send_message.sh
+                    </div>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <label class="text-cyber-blue min-w-[80px]">Input Name:</label>
+                            <input type="text" class="bg-transparent border-b border-gray-600 focus:border-cyber-green outline-none text-white w-full" placeholder="_">
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <label class="text-cyber-blue min-w-[80px]">Input Email:</label>
+                            <input type="email" class="bg-transparent border-b border-gray-600 focus:border-cyber-green outline-none text-white w-full" placeholder="_">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-cyber-blue">Message Payload:</label>
+                            <textarea rows="4" class="bg-gray-900/50 border border-gray-700 focus:border-cyber-green outline-none text-white w-full p-2 rounded" placeholder="// Type your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="mt-4 text-cyber-green hover:text-white border border-cyber-green hover:bg-cyber-green/20 px-4 py-2 rounded transition-colors w-full md:w-auto">
+                            > EXECUTE SEND
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-500">
+                        <p>Other channels:</p>
+                        <div class="flex gap-4 mt-2 text-lg">
+                            <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-gray-600 font-fira text-xs border-t border-white/5">
+        <p>© 2024 Eng. Hakim Alqubati. All systems operational.</p>
+    </footer>
+
+    <!-- Libraries: Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
-        // Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
+        // --- 1. Language & Content Logic ---
+        const translations = {
+            en: {
+                nav_about: "About", nav_skills: "Skills", nav_exp: "Experience", nav_projects: "Projects", nav_contact: "Contact",
+                hero_greeting: "Hello, World! I am",
+                hero_titles: ["Backend Architect", "Systems Engineer", "Cloud Native Expert"],
+                btn_projects: "View Work", btn_contact: "Contact Me",
+                section_about: "About Me",
+                about_desc: "As a <strong class='text-cyber-blue'>Backend Architect</strong>, I don't just write code; I design resilient, scalable systems that power the AI era. My passion lies in orchestration, microservices, and optimizing data flow.",
+                section_skills: "Tech Architecture",
+                section_exp: "Experience Log",
+                section_projects: "System Implementations",
+                proj_1_desc: "A high-performance API gateway with AI-based traffic analysis and anomaly detection built in Go.",
+                proj_2_desc: "Custom implementation of a distributed caching mechanism using consistent hashing.",
+                section_contact: "Initialize Handshake"
+            },
+            ar: {
+                nav_about: "عني", nav_skills: "المهارات", nav_exp: "الخبرات", nav_projects: "المشاريع", nav_contact: "تواصل معي",
+                hero_greeting: "أهلاً بك في عالمي، أنا",
+                hero_titles: ["مهندس أنظمة Backend", "مصمم معماري برمجيات", "خبير الحوسبة السحابية"],
+                btn_projects: "تصفح أعمالي", btn_contact: "تواصل معي",
+                section_about: "نبذة عني",
+                about_desc: "بصفتي <strong class='text-cyber-blue'>Backend Architect</strong>، أنا لا أكتب الكود فحسب؛ بل أصمم أنظمة مرنة وقابلة للتوسع تقود عصر الذكاء الاصطناعي. شغفي يكمن في الأتمتة، الخدمات المصغرة (Microservices)، وتحسين تدفق البيانات.",
+                section_skills: "الترسانة التقنية",
+                section_exp: "السجل المهني",
+                section_projects: "تنفيذ الأنظمة",
+                proj_1_desc: "بوابة API عالية الأداء مع تحليل حركة المرور القائم على الذكاء الاصطناعي وكشف الشذوذ، مبنية بلغة Go.",
+                proj_2_desc: "تنفيذ مخصص لنظام التخزين المؤقت الموزع (Distributed Cache) باستخدام خوارزميات التجزئة المتسقة.",
+                section_contact: "بدء الاتصال"
+            }
+        };
 
-        // Check local storage
-        if (localStorage.getItem('theme') === 'dark' ||
-            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-        } else {
-            htmlElement.classList.remove('dark');
+        let currentLang = 'en';
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        
+        // Typewriter Variables
+        let typeWriterIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function updateContent() {
+            const t = translations[currentLang];
+            document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update simple text keys
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (t[key]) el.innerHTML = t[key];
+            });
+
+            // Update Font classes for Arabic
+            if (currentLang === 'ar') {
+                document.body.classList.add('font-cairo');
+                document.body.classList.remove('font-inter');
+                // Adjust timeline spacing for RTL
+                document.querySelectorAll('.timeline-line').forEach(el => el.style.right = '50%');
+            } else {
+                document.body.classList.add('font-inter');
+                document.body.classList.remove('font-cairo');
+            }
         }
 
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            langText.innerText = currentLang === 'en' ? 'AR' : 'EN';
+            updateContent();
         });
 
-        // PDF Download Logic
-        function downloadPDF() {
-            // Select the content to download (ID added to the resume card)
-            const element = document.getElementById('cv-content');
+        // --- 2. Typewriter Effect Logic ---
+        function typeWriterEffect() {
+            const titles = translations[currentLang].hero_titles;
+            const currentTitle = titles[typeWriterIndex % titles.length];
+            const typeElement = document.getElementById('typewriter');
 
-            // Calculate width and height dynamically to force a single page
-            const opt = {
-                margin: 0, // Zero margin as requested
-                filename: 'Abdulhakim_Ahmed_CV.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
-                // Use 'px' unit and set format to the element's scroll dimensions
-                // This creates a custom PDF size matching the resume content exactly
-                jsPDF: { unit: 'px', format: [element.offsetWidth, element.scrollHeight], orientation: 'portrait' }
-            };
+            if (isDeleting) {
+                typeElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                typeElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100;
+            }
 
-            // Generate and Save
-            html2pdf().set(opt).from(element).save();
+            if (!isDeleting && charIndex === currentTitle.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                typeWriterIndex++;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriterEffect, typeSpeed);
         }
+        
+        // Start Typewriter
+        document.addEventListener('DOMContentLoaded', typeWriterEffect);
+
+
+        // --- 3. Three.js Background (Neural Network / Server Nodes) ---
+        const canvas = document.querySelector('#bg-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        // Particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 300; // Optimal for performance
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20; // Spread logic
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        // Material (Cyber Blue Dots)
+        const material = new THREE.PointsMaterial({
+            size: 0.04,
+            color: 0x00f3ff,
+            transparent: true,
+            opacity: 0.8,
+        });
+
+        // Mesh
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        // Lines connecting close particles (Neural Network effect)
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0x2a2a35, transparent: true, opacity: 0.1 });
+        const linesGeometry = new THREE.BufferGeometry();
+        const linesMesh = new THREE.LineSegments(linesGeometry, lineMaterial);
+        scene.add(linesMesh);
+
+        camera.position.z = 4;
+
+        // Mouse Interaction
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX / window.innerWidth - 0.5;
+            mouseY = event.clientY / window.innerHeight - 0.5;
+        });
+
+        // Animation Loop
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            // Rotate entire system gently
+            particlesMesh.rotation.y = elapsedTime * 0.05;
+            particlesMesh.rotation.x = mouseY * 0.2;
+            particlesMesh.rotation.y += mouseX * 0.2;
+
+            // Update Lines (Dynamic connection)
+            // *Simplified for performance: connecting random subsets or static logic is better for mobile*
+            // For this demo, we will rely on point rotation for visual effect to keep FPS high.
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+
+        // --- 4. GSAP Scroll Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Reveal elements on scroll
+        gsap.utils.toArray('.gs-reveal').forEach(elem => {
+            gsap.fromTo(elem, 
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%",
+                    }
+                }
+            );
+        });
+        
+        // Staggered skill reveal
+        gsap.from(".skill-card", {
+            scrollTrigger: {
+                trigger: "#skills",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1
+        });
+
+        // Form handling (Mock)
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "> TRANSMITTING...";
+            btn.classList.add('text-cyber-blue');
+            
+            setTimeout(() => {
+                btn.innerText = "> DATA SENT SUCCESSFULLY";
+                btn.classList.replace('text-cyber-blue', 'text-cyber-green');
+                e.target.reset();
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('text-cyber-green');
+                }, 3000);
+            }, 1500);
+        });
+
     </script>
 </body>
-
 </html>
