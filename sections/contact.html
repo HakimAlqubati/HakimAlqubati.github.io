@@ -1,0 +1,63 @@
+<section id="contact" class="py-20 px-4 flex justify-center">
+    <div class="w-full max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-8 text-center">
+            <span class="text-cyber-green">05.</span> <span data-key="section_contact">Initialize Handshake</span>
+        </h2>
+
+        <div
+            class="bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden font-fira text-sm md:text-base">
+            <!-- Terminal Header -->
+            <div class="bg-gray-900 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <div class="ml-4 text-gray-400 text-xs">hakim@server:~/contact</div>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-6 text-gray-300">
+                <div class="mb-4">
+                    <span class="text-cyber-green">root@hakim:~$</span> ./send_message.sh
+                </div>
+
+                <form id="contact-form" class="space-y-4">
+                    <div class="flex flex-col md:flex-row gap-2">
+                        <label class="text-cyber-blue min-w-[80px]">Input Name:</label>
+                        <input type="text"
+                            class="bg-transparent border-b border-gray-600 focus:border-cyber-green outline-none text-white w-full"
+                            placeholder="_">
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-2">
+                        <label class="text-cyber-blue min-w-[80px]">Input Email:</label>
+                        <input type="email"
+                            class="bg-transparent border-b border-gray-600 focus:border-cyber-green outline-none text-white w-full"
+                            placeholder="_">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-cyber-blue">Message Payload:</label>
+                        <textarea rows="4"
+                            class="bg-gray-900/50 border border-gray-700 focus:border-cyber-green outline-none text-white w-full p-2 rounded"
+                            placeholder="// Type your message here..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="mt-4 text-cyber-green hover:text-white border border-cyber-green hover:bg-cyber-green/20 px-4 py-2 rounded transition-colors w-full md:w-auto">
+                        > EXECUTE SEND
+                    </button>
+                </form>
+
+                <div class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-500">
+                    <p>Other channels:</p>
+                    <div class="flex gap-4 mt-2 text-lg">
+                        <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white hover:scale-110 transition-transform"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
