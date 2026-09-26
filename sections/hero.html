@@ -4,162 +4,139 @@
         <!-- Text Content (7 Columns) -->
         <div class="lg:col-span-7 text-center lg:text-start order-2 lg:order-1 relative z-20">
             <!-- Status & Location Badges -->
-            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5">
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-6">
                 <span
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-green/10 border border-cyber-green/30 text-cyber-green font-fira text-xs tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-cyber-green animate-ping"></span>
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-slate-200 font-fira text-xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
                     <span data-key="hero_greeting">SYSTEM ARCHITECT // BACKEND ENGINEER</span>
                 </span>
                 <span
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 font-fira text-xs">
-                    <i class="fas fa-map-marker-alt text-cyber-blue"></i>
+                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/60 border border-slate-800/80 text-slate-400 font-fira text-xs">
+                    <i class="fas fa-map-marker-alt text-blue-400"></i>
                     <span data-key="hero_location">Sana'a, Yemen</span>
                 </span>
             </div>
 
             <!-- Main Name Heading -->
-            <h1 class="text-4xl sm:text-6xl xl:text-7xl font-orbitron font-black text-white mb-2 leading-tight gs-reveal">
+            <h1 class="text-4xl sm:text-6xl xl:text-7xl font-orbitron font-extrabold text-slate-50 mb-3 leading-[1.1] tracking-tight gs-reveal">
                 <span data-key="hero_first_name">ABDULHAKIM</span> <br>
                 <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyan-300 to-cyber-purple drop-shadow-[0_0_12px_rgba(0,243,255,0.3)]"
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-indigo-400"
                     data-key="hero_last_name">ALQUBATI</span>
             </h1>
 
-            <p class="text-xs sm:text-sm font-fira text-gray-400 mb-6 tracking-wide" data-key="hero_full_name">
+            <p class="text-xs sm:text-sm font-fira text-slate-400 mb-6 tracking-wide" data-key="hero_full_name">
                 Abdulhakim Ahmed Fadl Qaid — System Architect &amp; Backend Web Developer
             </p>
 
-            <!-- Typewriter Terminal Line -->
+            <!-- Minimalist Architectural Role Callout -->
             <div
-                class="mb-6 ps-4 border-s-2 border-cyber-blue/50 mx-auto lg:mx-0 max-w-lg lg:max-w-none text-start bg-white/[0.02] py-2.5 px-4 rounded-e-lg">
-                <div class="text-lg md:text-2xl font-fira text-gray-200 flex items-center gap-3">
-                    <span class="text-cyber-purple font-bold">&gt;</span>
-                    <span id="typewriter" class="text-cyber-blue font-semibold"></span>
-                    <span class="blink text-cyber-green text-2xl">|</span>
+                class="mb-6 ps-4 border-s-2 border-blue-500 mx-auto lg:mx-0 max-w-lg lg:max-w-none text-start bg-slate-900/50 border-y border-e border-y-slate-800/60 border-e-slate-800/60 py-2.5 px-4 rounded-e-lg">
+                <div class="text-base md:text-xl font-fira text-slate-200 flex items-center gap-2.5">
+                    <span class="text-blue-400 font-semibold">&gt;</span>
+                    <span id="typewriter" class="text-slate-100 font-medium"></span>
+                    <span class="blink text-blue-400 text-xl">|</span>
                 </div>
             </div>
 
             <!-- Hero Summary Pitch -->
-            <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
+            <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
                 data-key="hero_pitch">
-                Designing and building scalable <strong class="text-white">SaaS applications</strong>, multi-tenant
-                <strong class="text-cyber-blue">Enterprise Resource Planning (ERP)</strong> systems, and <strong
-                    class="text-white">B2B platforms</strong>. Specializing in the <strong
-                    class="text-cyber-purple">Laravel ecosystem</strong> and normalized relational database architectures
+                Designing and building scalable <strong class="text-slate-100 font-semibold">SaaS applications</strong>, multi-tenant
+                <strong class="text-blue-400 font-semibold">Enterprise Resource Planning (ERP)</strong> systems, and <strong
+                    class="text-slate-100 font-semibold">B2B platforms</strong>. Specializing in the <strong
+                    class="text-slate-100 font-semibold">Laravel ecosystem</strong> and normalized relational database architectures
                 that automate complex business workflows.
             </p>
 
-            <!-- Action Buttons -->
-            <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+            <!-- Action Buttons (Strict Primary / Secondary / Tertiary Hierarchy) -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3.5 mb-10">
                 <a href="#projects"
-                    class="group relative px-7 py-3.5 bg-cyber-blue text-black font-fira font-semibold text-sm tracking-wider rounded hover:bg-cyan-300 transition-all duration-300 shadow-[0_0_20px_rgba(0,243,255,0.3)] flex items-center gap-2">
-                    <i class="fas fa-sitemap"></i>
+                    class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-lg transition-all duration-200 shadow-lg shadow-blue-600/20 flex items-center gap-2.5">
+                    <i class="fas fa-layer-group text-xs"></i>
                     <span data-key="btn_projects">Explore ERP &amp; Systems</span>
                 </a>
                 <a href="#experience"
-                    class="px-7 py-3.5 glass-card border border-cyber-purple/40 text-white font-fira text-sm tracking-wider hover:border-cyber-purple hover:text-cyber-purple transition-all duration-300 rounded flex items-center gap-2">
-                    <i class="fas fa-briefcase"></i>
+                    class="px-6 py-3 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-600 font-medium text-sm transition-all duration-200 rounded-lg flex items-center gap-2.5">
+                    <i class="fas fa-briefcase text-blue-400 text-xs"></i>
                     <span data-key="btn_exp">Experience Log</span>
                 </a>
                 <a href="#contact"
-                    class="px-6 py-3.5 bg-transparent border border-white/15 text-gray-300 font-fira text-sm tracking-wider hover:border-cyber-green hover:text-cyber-green transition-all duration-300 rounded flex items-center gap-2">
-                    <i class="fas fa-paper-plane"></i>
+                    class="px-5 py-3 bg-transparent border border-slate-800 text-slate-400 hover:text-slate-100 hover:border-slate-700 hover:bg-slate-900/50 font-medium text-sm transition-all duration-200 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-paper-plane text-xs"></i>
                     <span data-key="btn_contact">Contact Me</span>
                 </a>
             </div>
 
             <!-- Quick Contact Strip -->
             <div
-                class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-fira text-gray-400 border-t border-white/10 pt-5">
+                class="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs font-fira text-slate-400 border-t border-slate-800/80 pt-5">
                 <a href="mailto:hakimahmed123321@gmail.com"
-                    class="hover:text-cyber-blue transition-colors flex items-center gap-2">
-                    <i class="fas fa-envelope text-cyber-blue"></i>
+                    class="hover:text-slate-200 transition-colors flex items-center gap-2">
+                    <i class="fas fa-envelope text-blue-400"></i>
                     <span>hakimahmed123321@gmail.com</span>
                 </a>
-                <span class="hidden sm:inline text-gray-700">|</span>
+                <span class="hidden sm:inline text-slate-800">|</span>
                 <a href="https://wa.me/967773030069" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-cyber-green transition-colors flex items-center gap-2" dir="ltr">
-                    <i class="fab fa-whatsapp text-cyber-green text-sm"></i>
+                    class="hover:text-slate-200 transition-colors flex items-center gap-2" dir="ltr">
+                    <i class="fab fa-whatsapp text-emerald-400 text-sm"></i>
                     <span>+967 773 030 069</span>
                 </a>
             </div>
         </div>
 
-        <!-- Professional Tech Frame Image (5 Columns) -->
+        <!-- Executive Portrait Frame (5 Columns) -->
         <div class="lg:col-span-5 flex justify-center order-1 lg:order-2 gs-reveal relative z-10">
-            <div class="relative w-72 h-72 sm:w-96 sm:h-96 xl:w-[27rem] xl:h-[27rem] flex justify-center items-center group">
-                <!-- Ambient Backdrop Glow -->
+            <div class="relative w-72 h-72 sm:w-96 sm:h-96 xl:w-[26rem] xl:h-[26rem] flex justify-center items-center group">
+                <!-- Subtle Ambient Blue Glow -->
                 <div
-                    class="absolute inset-0 bg-cyber-blue/15 blur-[80px] rounded-full group-hover:bg-cyber-purple/20 transition-colors duration-1000">
+                    class="absolute -inset-4 bg-gradient-to-tr from-blue-600/10 via-indigo-500/5 to-transparent blur-2xl rounded-3xl pointer-events-none">
                 </div>
 
-                <!-- Animated Geometric Borders -->
+                <!-- Clean Architectural Outer Frame -->
                 <div
-                    class="absolute inset-0 border border-cyber-blue/20 rounded-[36px] rotate-3 scale-105 group-hover:rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
-                </div>
-                <div
-                    class="absolute inset-0 border border-cyber-purple/20 rounded-[36px] -rotate-3 scale-105 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
-                </div>
-
-                <!-- Main Image Container -->
-                <div
-                    class="relative w-full h-full rounded-[28px] overflow-hidden border border-white/15 shadow-2xl bg-gray-900/60 backdrop-blur-sm">
-                    <!-- Tech Overlay Scanline -->
+                    class="relative w-full h-full p-2.5 rounded-2xl bg-slate-900/60 border border-slate-800/90 shadow-2xl backdrop-blur-sm transition-colors duration-300 group-hover:border-slate-700">
+                    <!-- Main Image Container -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-blue/5 to-transparent bg-[length:100%_4px] opacity-20 pointer-events-none z-20">
-                    </div>
+                        class="relative w-full h-full rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
 
-                    <!-- Profile Image -->
-                    <img src="imgs/hakim-1.png" alt="Abdulhakim Ahmed Fadl Qaid - System Architect"
-                        class="w-full h-full object-cover object-top filter contrast-[1.06] brightness-[1.05] group-hover:scale-105 transition-all duration-700">
+                        <!-- Profile Image -->
+                        <img src="imgs/hakim-1.png" alt="Abdulhakim Ahmed Fadl Qaid - System Architect"
+                            class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-[1.02] transition-transform duration-500">
 
-                    <!-- Inner Tech UI Overlay -->
-                    <div
-                        class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/95 via-black/70 to-transparent z-30">
-                        <div class="flex justify-between items-end border-b border-white/15 pb-2.5">
-                            <div class="text-start">
-                                <div class="text-[10px] font-fira text-cyber-blue tracking-[0.18em] mb-0.5"
-                                    data-key="hud_role_label">CURRENT ROLE</div>
-                                <div class="text-xs sm:text-sm font-orbitron font-bold text-white"
-                                    data-key="hud_role_val">SYSTEM ARCHITECT @ NLT</div>
-                            </div>
-                            <div class="flex flex-col items-end">
-                                <div class="flex gap-1 mb-1">
-                                    <div class="w-1.5 h-1.5 bg-cyber-blue rounded-full"></div>
-                                    <div class="w-1.5 h-1.5 bg-cyber-purple rounded-full"></div>
-                                    <div class="w-1.5 h-1.5 bg-cyber-green rounded-full"></div>
+                        <!-- Minimalist Executive Overlay Badge -->
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#090D16] via-[#090D16]/90 to-transparent z-30">
+                            <div class="p-3.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-slate-800/90">
+                                <div class="flex justify-between items-center border-b border-slate-800 pb-2 mb-2">
+                                    <div class="text-start">
+                                        <div class="text-[10px] font-fira text-slate-400 uppercase tracking-wider mb-0.5"
+                                            data-key="hud_role_label">CURRENT ROLE</div>
+                                        <div class="text-xs sm:text-sm font-orbitron font-bold text-slate-100"
+                                            data-key="hud_role_val">SYSTEM ARCHITECT @ NLT</div>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                        <span class="text-[10px] font-fira text-emerald-400 font-medium"
+                                            data-key="hud_status">ACTIVE SINCE 2019</span>
+                                    </div>
                                 </div>
-                                <div class="text-[10px] font-fira text-cyber-green tracking-widest animate-pulse"
-                                    data-key="hud_status">ACTIVE SINCE 2019</div>
+                                <div class="flex justify-between items-center text-[11px] font-fira text-slate-400">
+                                    <span>Laravel • FilamentPHP • Livewire</span>
+                                    <span class="text-blue-400 font-medium">ERP &amp; SaaS</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center pt-2 text-[10px] font-fira text-gray-400">
-                            <span>Laravel • FilamentPHP • Livewire</span>
-                            <span class="text-cyber-blue">ERP &amp; SaaS</span>
-                        </div>
                     </div>
-                </div>
-
-                <!-- External Tech Accents (Corners) -->
-                <div
-                    class="absolute -top-3 -left-3 w-14 h-14 border-t-2 border-l-2 border-cyber-blue/60 rounded-tl-xl z-20 transition-all duration-500 group-hover:border-cyber-blue group-hover:-top-4 group-hover:-left-4">
-                </div>
-                <div
-                    class="absolute -bottom-3 -right-3 w-14 h-14 border-b-2 border-r-2 border-cyber-purple/60 rounded-br-xl z-20 transition-all duration-500 group-hover:border-cyber-purple group-hover:-bottom-4 group-hover:-right-4">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Key Metrics Bar at Bottom of Hero -->
-    <div class="max-w-7xl mx-auto px-6 w-full mt-12 hidden md:block">
-        <!-- Rendered inside main hero container flow if needed, or we keep Scroll Indicator -->
-    </div>
-
     <!-- Scroll Indicator -->
     <a href="#about"
-        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-        <span class="text-[10px] font-fira tracking-widest text-cyber-blue" data-key="scroll_down">SCROLL</span>
-        <div class="w-[1px] h-8 bg-gradient-to-b from-cyber-blue to-transparent"></div>
+        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
+        <span class="text-[10px] font-fira tracking-widest text-slate-400" data-key="scroll_down">SCROLL</span>
+        <div class="w-[1px] h-7 bg-gradient-to-b from-blue-500/60 to-transparent"></div>
     </a>
 </section>

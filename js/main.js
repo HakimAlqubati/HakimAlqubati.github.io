@@ -25,7 +25,7 @@ const translations = {
             "Relational Database Architect",
             "SaaS & B2B Systems Engineer"
         ],
-        hero_pitch: "Designing and building scalable <strong class='text-white'>SaaS applications</strong>, multi-tenant <strong class='text-cyber-blue'>Enterprise Resource Planning (ERP)</strong> systems, and <strong class='text-white'>B2B platforms</strong>. Specializing in the <strong class='text-cyber-purple'>Laravel ecosystem</strong> and normalized relational database architectures that automate complex business workflows.",
+        hero_pitch: "Designing and building scalable <strong class='text-slate-100 font-semibold'>SaaS applications</strong>, multi-tenant <strong class='text-blue-400 font-semibold'>Enterprise Resource Planning (ERP)</strong> systems, and <strong class='text-slate-100 font-semibold'>B2B platforms</strong>. Specializing in the <strong class='text-slate-100 font-semibold'>Laravel ecosystem</strong> and normalized relational database architectures that automate complex business workflows.",
         btn_projects: "Explore ERP & Systems",
         btn_exp: "Experience Log",
         btn_contact: "Contact Me",
@@ -41,7 +41,7 @@ const translations = {
         stat_4_label: "Normalized Schemas & Optimization",
         section_about: "Professional Summary",
         about_badge: "// ARCHITECTURAL PROFILE",
-        about_desc: "A results-driven <strong class='text-cyber-blue'>System Architect and Backend Developer</strong> with hands-on experience designing and building scalable <strong class='text-white'>SaaS applications</strong>, <strong class='text-cyber-purple'>Enterprise Resource Planning (ERP) systems</strong>, and <strong class='text-white'>B2B platforms</strong>. Specializing in the <strong class='text-cyber-blue'>Laravel ecosystem</strong> and relational database architectures.",
+        about_desc: "A results-driven <strong class='text-blue-400 font-semibold'>System Architect and Backend Developer</strong> with hands-on experience designing and building scalable <strong class='text-slate-50 font-semibold'>SaaS applications</strong>, <strong class='text-slate-50 font-semibold'>Enterprise Resource Planning (ERP) systems</strong>, and <strong class='text-slate-50 font-semibold'>B2B platforms</strong>. Specializing in the <strong class='text-blue-400 font-semibold'>Laravel ecosystem</strong> and relational database architectures.",
         about_desc_2: "Highly capable of professionally analyzing complex business requirements and translating them into robust, highly optimized database structures and clean code to automate and streamline complex operational workflows.",
         pillar_1_title: "Enterprise ERP & SaaS Architecture",
         pillar_1_desc: "Architecting multi-tenant ERP platforms from the ground up, including HR, automated payroll, dynamic shifts, FIFO inventory, and fixed assets.",
@@ -92,30 +92,30 @@ const translations = {
         exp_1_company: "NLT Software Company",
         exp_1_role: "System Architect & Backend Engineer",
         exp_1_date: "Oct 2023 – Present",
-        exp_1_b1: "<strong class='text-white'>Technical Leadership & System Architecture:</strong> Hold general responsibility for the company's technical operations. Architected and led the complete backend development of <span class='text-cyber-blue font-semibold'>\"Workbench ERP\"</span> from the ground up.",
-        exp_1_b2: "<strong class='text-white'>Business Analysis & Database Architecture:</strong> Professionally analyze complex business requirements and operational logic, translating them into highly optimized and normalized relational database schemas.",
-        exp_1_b3: "<strong class='text-white'>ERP Module Development:</strong> Engineered sophisticated modules for HR management (attendance statistics, dynamic shift resolution, automated payroll) and multi-tenant inventory systems (FIFO algorithms, stock validations, and accounting structures).",
-        exp_1_b4: "<strong class='text-white'>Corporate Web Development:</strong> Designed, developed, and currently maintain the company's official websites and landing pages alongside the core systems.",
+        exp_1_b1: "<strong class='text-slate-100 font-semibold'>Technical Leadership & System Architecture:</strong> Hold general responsibility for the company's technical operations. Architected and led the complete backend development of <span class='text-blue-400 font-medium'>\"Workbench ERP\"</span> from the ground up.",
+        exp_1_b2: "<strong class='text-slate-100 font-semibold'>Business Analysis & Database Architecture:</strong> Professionally analyze complex business requirements and operational logic, translating them into highly optimized and normalized relational database schemas.",
+        exp_1_b3: "<strong class='text-slate-100 font-semibold'>ERP Module Development:</strong> Engineered sophisticated modules for HR management (attendance statistics, dynamic shift resolution, automated payroll) and multi-tenant inventory systems (FIFO algorithms, stock validations, and accounting structures).",
+        exp_1_b4: "<strong class='text-slate-100 font-semibold'>Corporate Web Development:</strong> Designed, developed, and currently maintain the company's official websites and landing pages alongside the core systems.",
 
         exp_2_company: "Smart Life Software Company",
         exp_2_role: "Full Stack Web Developer",
         exp_2_date: "Sep 2022 – Sep 2023",
-        exp_2_b1: "<strong class='text-white'>Developed \"Smart ERP\" Modules:</strong> Contributed to the expansion of an integrated ERP system by engineering two major independent modules: a <span class='text-cyber-purple font-semibold'>Fixed Assets Management</span> system and a <span class='text-cyber-purple font-semibold'>Restaurant Manufacturing</span> system.",
-        exp_2_b2: "<strong class='text-white'>Business Logic Integration:</strong> Translated financial and operational requirements into functional backend code, ensuring strict data consistency across modules.",
+        exp_2_b1: "<strong class='text-slate-100 font-semibold'>Developed \"Smart ERP\" Modules:</strong> Contributed to the expansion of an integrated ERP system by engineering two major independent modules: a <span class='text-blue-400 font-medium'>Fixed Assets Management</span> system and a <span class='text-blue-400 font-medium'>Restaurant Manufacturing</span> system.",
+        exp_2_b2: "<strong class='text-slate-100 font-semibold'>Business Logic Integration:</strong> Translated financial and operational requirements into functional backend code, ensuring strict data consistency across modules.",
 
         exp_3_company: "Cloud Snap Software Company",
         exp_3_role: "Full Stack Web Developer",
         exp_3_date: "Mar 2022 – Sep 2022",
-        exp_3_b1: "<strong class='text-white'>Engineered Time & Attendance System:</strong> Designed and built a comprehensive attendance tracking application tailored for specific work environments, featuring customized dynamic reporting capabilities.",
-        exp_3_b2: "<strong class='text-white'>Developed E-commerce Solutions:</strong> Architected a lightweight e-commerce platform, implementing core functionalities from product catalog management to user workflows.",
-        exp_3_b3: "<strong class='text-white'>Database Design:</strong> Architected and normalized the relational database schemas for both systems, ensuring strict data integrity and efficient query performance.",
+        exp_3_b1: "<strong class='text-slate-100 font-semibold'>Engineered Time & Attendance System:</strong> Designed and built a comprehensive attendance tracking application tailored for specific work environments, featuring customized dynamic reporting capabilities.",
+        exp_3_b2: "<strong class='text-slate-100 font-semibold'>Developed E-commerce Solutions:</strong> Architected a lightweight e-commerce platform, implementing core functionalities from product catalog management to user workflows.",
+        exp_3_b3: "<strong class='text-slate-100 font-semibold'>Database Design:</strong> Architected and normalized the relational database schemas for both systems, ensuring strict data integrity and efficient query performance.",
 
         exp_4_company: "Yottagate Software Company",
         exp_4_role: "Backend Developer",
         exp_4_date: "Oct 2019 – Mar 2022",
-        exp_4_b1: "<strong class='text-white'>Engineered 'BawbtMIC' (School Management System):</strong> Developed the core backend architecture and administrative dashboard for a large-scale educational platform.",
-        exp_4_b2: "<strong class='text-white'>API Development:</strong> Built and secured RESTful APIs to ensure seamless, real-time data synchronization with the platform's mobile applications.",
-        exp_4_b3: "<strong class='text-white'>Internal Tools & Client Systems:</strong> Designed and deployed multiple internal web applications and customized client solutions, streamlining company operations.",
+        exp_4_b1: "<strong class='text-slate-100 font-semibold'>Engineered 'BawbtMIC' (School Management System):</strong> Developed the core backend architecture and administrative dashboard for a large-scale educational platform.",
+        exp_4_b2: "<strong class='text-slate-100 font-semibold'>API Development:</strong> Built and secured RESTful APIs to ensure seamless, real-time data synchronization with the platform's mobile applications.",
+        exp_4_b3: "<strong class='text-slate-100 font-semibold'>Internal Tools & Client Systems:</strong> Designed and deployed multiple internal web applications and customized client solutions, streamlining company operations.",
 
         // Projects / Systems
         section_projects: "Flagship ERP & System Implementations",
@@ -123,22 +123,22 @@ const translations = {
         proj_1_badge: "Multi-Tenant ERP Architecture",
         proj_1_role: "Lead System Architect",
         proj_1_title: "Workbench ERP",
-        proj_1_desc: "Architected and led the complete backend development from the ground up. Engineered sophisticated <strong class='text-white'>HR Management</strong> modules (attendance statistics, dynamic shift resolution, automated payroll) and <strong class='text-white'>Multi-Tenant Inventory</strong> systems (FIFO algorithms, stock validations, and accounting structures).",
+        proj_1_desc: "Architected and led the complete backend development from the ground up. Engineered sophisticated <strong class='text-slate-100 font-semibold'>HR Management</strong> modules (attendance statistics, dynamic shift resolution, automated payroll) and <strong class='text-slate-100 font-semibold'>Multi-Tenant Inventory</strong> systems (FIFO algorithms, stock validations, and accounting structures).",
 
         proj_2_badge: "Enterprise ERP Modules",
         proj_2_role: "Full Stack ERP Engineer",
         proj_2_title: "Smart ERP: Assets & Manufacturing",
-        proj_2_desc: "Engineered two major independent modules within an integrated ERP ecosystem: a comprehensive <strong class='text-white'>Fixed Assets Management System</strong> and a <strong class='text-white'>Restaurant Manufacturing System</strong>, translating complex financial and operational rules into strict, consistent backend workflows.",
+        proj_2_desc: "Engineered two major independent modules within an integrated ERP ecosystem: a comprehensive <strong class='text-slate-100 font-semibold'>Fixed Assets Management System</strong> and a <strong class='text-slate-100 font-semibold'>Restaurant Manufacturing System</strong>, translating complex financial and operational rules into strict, consistent backend workflows.",
 
         proj_3_badge: "EdTech Platform & Mobile API",
         proj_3_role: "Backend Architect",
         proj_3_title: "BawbtMIC — School Management",
-        proj_3_desc: "Developed the core backend architecture and administrative dashboard for a large-scale educational management platform. Built and secured high-performance <strong class='text-white'>RESTful APIs</strong> for seamless, real-time data synchronization with mobile applications.",
+        proj_3_desc: "Developed the core backend architecture and administrative dashboard for a large-scale educational management platform. Built and secured high-performance <strong class='text-slate-100 font-semibold'>RESTful APIs</strong> for seamless, real-time data synchronization with mobile applications.",
 
         proj_4_badge: "HR Tech & B2C/B2B E-Commerce",
         proj_4_role: "Full Stack Developer",
         proj_4_title: "Attendance Engine & E-Commerce",
-        proj_4_desc: "Designed a comprehensive <strong class='text-white'>Time & Attendance tracking application</strong> featuring customized dynamic reporting engines, alongside a lightweight <strong class='text-white'>E-Commerce platform</strong> backed by normalized database schemas and optimized SQL queries.",
+        proj_4_desc: "Designed a comprehensive <strong class='text-slate-100 font-semibold'>Time & Attendance tracking application</strong> featuring customized dynamic reporting engines, alongside a lightweight <strong class='text-slate-100 font-semibold'>E-Commerce platform</strong> backed by normalized database schemas and optimized SQL queries.",
 
         // Contact & Footer
         section_contact: "Initialize Handshake",
@@ -150,7 +150,7 @@ const translations = {
         form_name_label: "Input Name:",
         form_email_label: "Input Email:",
         form_msg_label: "Message Payload (Project / Inquiry):",
-        form_submit_btn: "EXECUTE SEND (EMAIL)",
+        form_submit_btn: "Send via Email",
         form_whatsapp_btn: "Send via WhatsApp",
         footer_copy: "© 2026 Eng. Abdulhakim Ahmed Fadl Qaid. All systems operational."
     },
@@ -180,7 +180,7 @@ const translations = {
             "مهندس قواعد بيانات علائقية",
             "مطور تطبيقات SaaS ومنصات B2B"
         ],
-        hero_pitch: "خبرة عملية واسعة في تصميم وبناء <strong class='text-white'>تطبيقات SaaS القابلة للتوسع</strong>، وأنظمة <strong class='text-cyber-blue'>تخطيط موارد المؤسسات (ERP)</strong> متعددة المستأجرين، ومنصات <strong class='text-white'>B2B</strong>. متخصص في بيئة <strong class='text-cyber-purple'>Laravel</strong> ومعمارية قواعد البيانات العلائقية لأتمتة وتبسيط العمليات التشغيلية المعقدة.",
+        hero_pitch: "خبرة عملية واسعة في تصميم وبناء <strong class='text-slate-100 font-semibold'>تطبيقات SaaS القابلة للتوسع</strong>، وأنظمة <strong class='text-blue-400 font-semibold'>تخطيط موارد المؤسسات (ERP)</strong> متعددة المستأجرين، ومنصات <strong class='text-slate-100 font-semibold'>B2B</strong>. متخصص في بيئة <strong class='text-slate-100 font-semibold'>Laravel</strong> ومعمارية قواعد البيانات العلائقية لأتمتة وتبسيط العمليات التشغيلية المعقدة.",
         btn_projects: "استكشف الأنظمة والمشاريع",
         btn_exp: "السجل المهني",
         btn_contact: "تواصل معي",
@@ -196,7 +196,7 @@ const translations = {
         stat_4_label: "تطبيع الجداول وتحسين الاستعلامات",
         section_about: "الملخص المهني",
         about_badge: "// الملف المعماري والمهني",
-        about_desc: "مهندس معماري للأنظمة ومطور واجهات خلفية (<strong class='text-cyber-blue'>System Architect & Backend Developer</strong>) يركز على النتائج، مع خبرة عملية في تصميم وبناء <strong class='text-white'>تطبيقات SaaS القابلة للتوسع</strong>، وأنظمة <strong class='text-cyber-purple'>تخطيط موارد المؤسسات (ERP)</strong>، ومنصات <strong class='text-white'>B2B</strong>، مع التخصص الدقيق في بيئة <strong class='text-cyber-blue'>Laravel</strong> ومعمارية قواعد البيانات العلائقية.",
+        about_desc: "مهندس معماري للأنظمة ومطور واجهات خلفية (<strong class='text-blue-400 font-semibold'>System Architect & Backend Developer</strong>) يركز على النتائج، مع خبرة عملية في تصميم وبناء <strong class='text-slate-50 font-semibold'>تطبيقات SaaS القابلة للتوسع</strong>، وأنظمة <strong class='text-slate-50 font-semibold'>تخطيط موارد المؤسسات (ERP)</strong>، ومنصات <strong class='text-slate-50 font-semibold'>B2B</strong>، مع التخصص الدقيق في بيئة <strong class='text-blue-400 font-semibold'>Laravel</strong> ومعمارية قواعد البيانات العلائقية.",
         about_desc_2: "قدرة احترافية عالية على تحليل متطلبات الأعمال والمنطق التشغيلي المعقد وترجمتها إلى هياكل قواعد بيانات قوية ومُحسّنة وكود برمجي نظيف لأتمتة وتبسيط مسارات العمل المؤسسية.",
         pillar_1_title: "هندسة أنظمة ERP وتطبيقات SaaS",
         pillar_1_desc: "بناء أنظمة ERP متعددة المستأجرين من الصفر، تشمل إدارة الموارد البشرية، الرواتب المؤتمتة، الورديات الديناميكية، المخزون بخوارزميات FIFO، والأصول الثابتة.",
@@ -247,30 +247,30 @@ const translations = {
         exp_1_company: "شركة NLT للبرمجيات (NLT Software Company)",
         exp_1_role: "مهندس معماري للأنظمة ومطور Backend (System Architect & Backend Engineer)",
         exp_1_date: "أكتوبر 2023 – حتى الآن",
-        exp_1_b1: "<strong class='text-white'>القيادة التقنية ومعمارية الأنظمة:</strong> تولي المسؤولية العامة عن العمليات التقنية للشركة، وتصميم وقيادة التطوير الكامل للواجهة الخلفية لنظام <span class='text-cyber-blue font-semibold'>\"Workbench ERP\"</span> من الصفر.",
-        exp_1_b2: "<strong class='text-white'>تحليل الأعمال وهندسة قواعد البيانات:</strong> تحليل متطلبات الأعمال المعقدة والمنطق التشغيلي باحترافية، وترجمتها إلى مخططات قواعد بيانات علائقية مطبّعة وعالية الأداء.",
-        exp_1_b3: "<strong class='text-white'>تطوير وحدات الـ ERP:</strong> هندسة وحدات متقدمة لإدارة الموارد البشرية (إحصائيات الحضور، معالجة الورديات الديناميكية، الرواتب المؤتمتة) وأنظمة المخزون متعددة المستأجرين (خوارزميات FIFO، التحقق من المخزون، والهياكل المحاسبية).",
-        exp_1_b4: "<strong class='text-white'>تطوير المواقع المؤسسية:</strong> تصميم وتطوير وصيانة المواقع الرسمية والصفحات التعريفية للشركة إلى جانب الأنظمة الأساسية.",
+        exp_1_b1: "<strong class='text-slate-100 font-semibold'>القيادة التقنية ومعمارية الأنظمة:</strong> تولي المسؤولية العامة عن العمليات التقنية للشركة، وتصميم وقيادة التطوير الكامل للواجهة الخلفية لنظام <span class='text-blue-400 font-medium'>\"Workbench ERP\"</span> من الصفر.",
+        exp_1_b2: "<strong class='text-slate-100 font-semibold'>تحليل الأعمال وهندسة قواعد البيانات:</strong> تحليل متطلبات الأعمال المعقدة والمنطق التشغيلي باحترافية، وترجمتها إلى مخططات قواعد بيانات علائقية مطبّعة وعالية الأداء.",
+        exp_1_b3: "<strong class='text-slate-100 font-semibold'>تطوير وحدات الـ ERP:</strong> هندسة وحدات متقدمة لإدارة الموارد البشرية (إحصائيات الحضور، معالجة الورديات الديناميكية، الرواتب المؤتمتة) وأنظمة المخزون متعددة المستأجرين (خوارزميات FIFO، التحقق من المخزون، والهياكل المحاسبية).",
+        exp_1_b4: "<strong class='text-slate-100 font-semibold'>تطوير المواقع المؤسسية:</strong> تصميم وتطوير وصيانة المواقع الرسمية والصفحات التعريفية للشركة إلى جانب الأنظمة الأساسية.",
 
         exp_2_company: "شركة سمارت لايف للبرمجيات (Smart Life Software)",
         exp_2_role: "مطور ويب متكامل (Full Stack Web Developer)",
         exp_2_date: "سبتمبر 2022 – سبتمبر 2023",
-        exp_2_b1: "<strong class='text-white'>تطوير وحدات \"Smart ERP\":</strong> المساهمة في توسيع نظام ERP متكامل من خلال هندسة وحدتين رئيسيتين مستقلتين: نظام <span class='text-cyber-purple font-semibold'>إدارة الأصول الثابتة</span> ونظام <span class='text-cyber-purple font-semibold'>تصنيع المطاعم</span>.",
-        exp_2_b2: "<strong class='text-white'>دمج منطق الأعمال:</strong> ترجمة المتطلبات المالية والتشغيلية إلى كود برمجي وظيفي، مع ضمان الاتساق الصارم للبيانات عبر جميع الوحدات.",
+        exp_2_b1: "<strong class='text-slate-100 font-semibold'>تطوير وحدات \"Smart ERP\":</strong> المساهمة في توسيع نظام ERP متكامل من خلال هندسة وحدتين رئيسيتين مستقلتين: نظام <span class='text-blue-400 font-medium'>إدارة الأصول الثابتة</span> ونظام <span class='text-blue-400 font-medium'>تصنيع المطاعم</span>.",
+        exp_2_b2: "<strong class='text-slate-100 font-semibold'>دمج منطق الأعمال:</strong> ترجمة المتطلبات المالية والتشغيلية إلى كود برمجي وظيفي، مع ضمان الاتساق الصارم للبيانات عبر جميع الوحدات.",
 
         exp_3_company: "شركة كلاود سناب للبرمجيات (Cloud Snap Software)",
         exp_3_role: "مطور ويب متكامل (Full Stack Web Developer)",
         exp_3_date: "مارس 2022 – سبتمبر 2022",
-        exp_3_b1: "<strong class='text-white'>هندسة نظام الحضور والانصراف:</strong> تصميم وبناء تطبيق شامل لتتبع الحضور والانصراف مخصص لبيئات العمل المختلفة، مع قدرات تقارير ديناميكية مخصصة.",
-        exp_3_b2: "<strong class='text-white'>تطوير حلول التجارة الإلكترونية:</strong> هندسة منصة تجارة إلكترونية خفيفة وسريعة، وتنفيذ الوظائف الأساسية بدءاً من إدارة كتالوج المنتجات وحتى مسارات المستخدمين.",
-        exp_3_b3: "<strong class='text-white'>تصميم قواعد البيانات:</strong> تصميم وتطبيع مخططات قواعد البيانات العلائقية لكلا النظامين، لضمان سلامة البيانات وكفاءة أداء الاستعلامات.",
+        exp_3_b1: "<strong class='text-slate-100 font-semibold'>هندسة نظام الحضور والانصراف:</strong> تصميم وبناء تطبيق شامل لتتبع الحضور والانصراف مخصص لبيئات العمل المختلفة، مع قدرات تقارير ديناميكية مخصصة.",
+        exp_3_b2: "<strong class='text-slate-100 font-semibold'>تطوير حلول التجارة الإلكترونية:</strong> هندسة منصة تجارة إلكترونية خفيفة وسريعة، وتنفيذ الوظائف الأساسية بدءاً من إدارة كتالوج المنتجات وحتى مسارات المستخدمين.",
+        exp_3_b3: "<strong class='text-slate-100 font-semibold'>تصميم قواعد البيانات:</strong> تصميم وتطبيع مخططات قواعد البيانات العلائقية لكلا النظامين، لضمان سلامة البيانات وكفاءة أداء الاستعلامات.",
 
         exp_4_company: "شركة يوتاجيت للبرمجيات (Yottagate Software)",
         exp_4_role: "مطور واجهات خلفية (Backend Developer)",
         exp_4_date: "أكتوبر 2019 – مارس 2022",
-        exp_4_b1: "<strong class='text-white'>هندسة منصة 'BawbtMIC' (نظام إدارة المدارس):</strong> تطوير البنية التحتية الأساسية ولوحة التحكم الإدارية لمنصة تعليمية واسعة النطاق.",
-        exp_4_b2: "<strong class='text-white'>تطوير واجهات RESTful APIs:</strong> بناء وتأمين واجهات البرمجة لضمان مزامنة البيانات الفورية والسلسة مع تطبيقات الهواتف الذكية الخاصة بالمنصة.",
-        exp_4_b3: "<strong class='text-white'>الأدوات الداخلية وأنظمة العملاء:</strong> تصميم ونشر تطبيقات ويب داخلية متعددة وحلول مخصصة للعملاء لتبسيط العمليات التشغيلية.",
+        exp_4_b1: "<strong class='text-slate-100 font-semibold'>هندسة منصة 'BawbtMIC' (نظام إدارة المدارس):</strong> تطوير البنية التحتية الأساسية ولوحة التحكم الإدارية لمنصة تعليمية واسعة النطاق.",
+        exp_4_b2: "<strong class='text-slate-100 font-semibold'>تطوير واجهات RESTful APIs:</strong> بناء وتأمين واجهات البرمجة لضمان مزامنة البيانات الفورية والسلسة مع تطبيقات الهواتف الذكية الخاصة بالمنصة.",
+        exp_4_b3: "<strong class='text-slate-100 font-semibold'>الأدوات الداخلية وأنظمة العملاء:</strong> تصميم ونشر تطبيقات ويب داخلية متعددة وحلول مخصصة للعملاء لتبسيط العمليات التشغيلية.",
 
         // Projects / Systems
         section_projects: "أبرز الأنظمة ومشاريع الـ ERP المنفذة",
@@ -278,22 +278,22 @@ const translations = {
         proj_1_badge: "معمارية ERP متعددة المستأجرين",
         proj_1_role: "مهندس معماري رئيسي",
         proj_1_title: "نظام Workbench ERP",
-        proj_1_desc: "تصميم وقيادة التطوير الكامل للنظام من الصفر، بما يشمل وحدات <strong class='text-white'>إدارة الموارد البشرية</strong> (إحصائيات الحضور، الورديات الديناميكية، الرواتب المؤتمتة) وأنظمة <strong class='text-white'>المخزون متعدد المستأجرين</strong> (خوارزميات FIFO، التحقق من المخزون، والهياكل المحاسبية).",
+        proj_1_desc: "تصميم وقيادة التطوير الكامل للنظام من الصفر، بما يشمل وحدات <strong class='text-slate-100 font-semibold'>إدارة الموارد البشرية</strong> (إحصائيات الحضور، الورديات الديناميكية، الرواتب المؤتمتة) وأنظمة <strong class='text-slate-100 font-semibold'>المخزون متعدد المستأجرين</strong> (خوارزميات FIFO، التحقق من المخزون، والهياكل المحاسبية).",
 
         proj_2_badge: "وحدات أنظمة ERP المؤسسية",
         proj_2_role: "مطور أنظمة ERP",
         proj_2_title: "Smart ERP: الأصول الثابتة وتصنيع المطاعم",
-        proj_2_desc: "هندسة وحدتين مستقلتين رئيسيتين ضمن منظومة ERP متكاملة: <strong class='text-white'>نظام إدارة الأصول الثابتة</strong> و<strong class='text-white'>نظام تصنيع المطاعم</strong>، مع ترجمة القواعد المالية والتشغيلية إلى مسارات عمل دقيقة ومتسقة.",
+        proj_2_desc: "هندسة وحدتين مستقلتين رئيسيتين ضمن منظومة ERP متكاملة: <strong class='text-slate-100 font-semibold'>نظام إدارة الأصول الثابتة</strong> و<strong class='text-slate-100 font-semibold'>نظام تصنيع المطاعم</strong>، مع ترجمة القواعد المالية والتشغيلية إلى مسارات عمل دقيقة ومتسقة.",
 
         proj_3_badge: "منصة تعليمية وواجهات API للجوال",
         proj_3_role: "مطور Backend رئيسي",
         proj_3_title: "منصة BawbtMIC — إدارة المدارس",
-        proj_3_desc: "بناء المعمارية الخلفية ولوحة التحكم الإدارية لمنصة تعليمية كبرى، مع تطوير وتأمين <strong class='text-white'>واجهات RESTful APIs</strong> عالية الأداء للمزامنة الفورية مع تطبيقات الجوال.",
+        proj_3_desc: "بناء المعمارية الخلفية ولوحة التحكم الإدارية لمنصة تعليمية كبرى، مع تطوير وتأمين <strong class='text-slate-100 font-semibold'>واجهات RESTful APIs</strong> عالية الأداء للمزامنة الفورية مع تطبيقات الجوال.",
 
         proj_4_badge: "أنظمة الحضور والتجارة الإلكترونية",
         proj_4_role: "مطور Full Stack",
         proj_4_title: "محرك الحضور والانصراف ومنصة التجارة الإلكترونية",
-        proj_4_desc: "تصميم <strong class='text-white'>نظام شامل لتتبع الحضور والانصراف</strong> بمحرك تقارير ديناميكي مخصص، إلى جانب <strong class='text-white'>منصة تجارة إلكترونية</strong> مبنية على قواعد بيانات علائقية مطبّعة واستعلامات SQL محسّنة.",
+        proj_4_desc: "تصميم <strong class='text-slate-100 font-semibold'>نظام شامل لتتبع الحضور والانصراف</strong> بمحرك تقارير ديناميكي مخصص، إلى جانب <strong class='text-slate-100 font-semibold'>منصة تجارة إلكترونية</strong> مبنية على قواعد بيانات علائقية مطبّعة واستعلامات SQL محسّنة.",
 
         // Contact & Footer
         section_contact: "بدء الاتصال والتعاون",
@@ -420,7 +420,7 @@ function typeWriterEffect() {
     typeTimer = setTimeout(typeWriterEffect, typeSpeed);
 }
 
-// --- 4. Three.js Background (Particle Network) ---
+// --- 4. Three.js Background (Subtle Enterprise Ambient Nodes) ---
 function initThreeJS() {
     const canvas = document.querySelector('#bg-canvas');
     if (!canvas || typeof THREE === 'undefined') return;
@@ -433,20 +433,20 @@ function initThreeJS() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 280;
+    const particlesCount = 160;
     const posArray = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount * 3; i++) {
-        posArray[i] = (Math.random() - 0.5) * 20;
+        posArray[i] = (Math.random() - 0.5) * 22;
     }
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
     const material = new THREE.PointsMaterial({
-        size: 0.04,
-        color: 0x00f3ff,
+        size: 0.03,
+        color: 0x60a5fa,
         transparent: true,
-        opacity: 0.75,
+        opacity: 0.45,
     });
 
     const particlesMesh = new THREE.Points(particlesGeometry, material);
@@ -468,8 +468,8 @@ function initThreeJS() {
         requestAnimationFrame(animate);
         const elapsedTime = clock.getElapsedTime();
 
-        particlesMesh.rotation.y = elapsedTime * 0.04 + mouseX * 0.2;
-        particlesMesh.rotation.x = mouseY * 0.2;
+        particlesMesh.rotation.y = elapsedTime * 0.02 + mouseX * 0.12;
+        particlesMesh.rotation.x = mouseY * 0.12;
 
         renderer.render(scene, camera);
     }
@@ -489,11 +489,11 @@ function initGSAP() {
 
     gsap.utils.toArray('.gs-reveal').forEach(elem => {
         gsap.fromTo(elem,
-            { y: 40, opacity: 0 },
+            { y: 28, opacity: 0 },
             {
                 y: 0,
                 opacity: 1,
-                duration: 0.85,
+                duration: 0.75,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: elem,
@@ -504,7 +504,7 @@ function initGSAP() {
     });
 
     gsap.fromTo(".skill-card",
-        { y: 40, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
             scrollTrigger: {
                 trigger: "#skills",
@@ -512,8 +512,8 @@ function initGSAP() {
             },
             y: 0,
             opacity: 1,
-            duration: 0.7,
-            stagger: 0.12,
+            duration: 0.65,
+            stagger: 0.1,
             ease: "power2.out"
         }
     );
@@ -533,14 +533,14 @@ function initForm() {
 
             const btn = document.getElementById('submit-btn');
             const originalHTML = btn.innerHTML;
-            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span>TRANSMITTING...</span>`;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span>SENDING...</span>`;
 
             const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
             const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
 
             setTimeout(() => {
                 window.location.href = `mailto:hakimahmed123321@gmail.com?subject=${subject}&body=${body}`;
-                btn.innerHTML = `<i class="fas fa-check"></i> <span>HANDSHAKE READY</span>`;
+                btn.innerHTML = `<i class="fas fa-check"></i> <span>READY TO SEND</span>`;
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                 }, 2500);
