@@ -141,6 +141,60 @@
             transform: translateY(-1px);
         }
 
+        /* Standardized Project Logo Showcase Pedestal */
+        .logo-frame {
+            width: 220px;
+            height: 120px;
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 14px 34px -6px rgba(0, 0, 0, 0.65),
+                0 0 0 1px rgba(255, 255, 255, 0.18),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .group:hover .logo-frame {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow:
+                0 20px 42px -8px rgba(0, 0, 0, 0.75),
+                0 0 28px -4px rgba(59, 130, 246, 0.3),
+                0 0 0 2px rgba(59, 130, 246, 0.45);
+        }
+
+        /* Compact Logo Badge for Headers & Experience Timeline */
+        .logo-badge-exp {
+            width: 68px;
+            height: 46px;
+            background: #F8FAFC;
+            border-radius: 10px;
+            padding: 5px 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Normalizes varying logo dimensions, blends light backgrounds & clips 2px edge artifacts */
+        .logo-img-normalized {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            mix-blend-mode: multiply;
+            filter: brightness(1.08) contrast(1.08);
+            clip-path: inset(3px);
+        }
+
         /* Cursor Blink */
         .blink {
             animation: blinker 1.1s step-end infinite;

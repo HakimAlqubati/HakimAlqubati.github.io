@@ -11,169 +11,333 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-2 gap-8">
 
-            <!-- Project 1: Workbench ERP -->
-            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
+            <!-- Project 1: Workbench ERP (NLT Software) -->
+            <article class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
                 <div>
-                    <div class="p-6 pb-5 bg-slate-900/50 border-b border-slate-800/80 relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/25 text-blue-400 font-fira text-xs font-medium" data-key="proj_1_badge">
+                    <!-- Minimalist Enterprise Browser Top Bar -->
+                    <div class="bg-[#090D16]/90 px-4 py-2.5 border-b border-slate-800/80 flex items-center justify-between gap-2" dir="ltr">
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-rose-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-amber-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-emerald-500/70 transition-colors"></span>
+                        </div>
+                        <div class="px-3 py-0.5 rounded bg-slate-900/90 border border-slate-800/90 text-[11px] font-fira text-slate-400 truncate flex items-center gap-1.5">
+                            <i class="fas fa-lock text-[9px] text-emerald-400"></i>
+                            <span>workbench-erp.nlt.internal</span>
+                        </div>
+                        <span class="text-[11px] font-fira text-slate-400 shrink-0">NLT Software</span>
+                    </div>
+
+                    <!-- Standardized Logo Showcase Viewport -->
+                    <div class="relative h-60 overflow-hidden bg-[#0A0F1A] border-b border-slate-800/70 flex items-center justify-center p-6">
+                        <!-- Subtle Ambient Dashboard Backdrop -->
+                        <img src="imgs/projects/workbench-erp.jpg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover object-center opacity-20 blur-[1px] scale-105 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F1623] via-[#090D16]/75 to-[#090D16]/60 pointer-events-none"></div>
+
+                        <!-- Top-Start NLT Company Logo Badge -->
+                        <div class="absolute top-3.5 start-4 z-10 flex items-center gap-2 bg-[#090D16]/85 backdrop-blur-md border border-slate-700/80 rounded-lg p-1 pe-2.5 shadow-md">
+                            <div class="w-12 h-7 bg-slate-50 rounded-md px-1.5 py-0.5 flex items-center justify-center overflow-hidden">
+                                <img src="imgs/projects/new/nlt.png" alt="NLT - Next Level Tech" class="logo-img-normalized">
+                            </div>
+                            <span class="text-[10px] font-fira text-slate-300 font-medium">NLT</span>
+                        </div>
+
+                        <!-- Top-End Production Status Pill -->
+                        <div class="absolute top-3.5 end-4 z-10">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#090D16]/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-fira text-emerald-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                Production ERP
+                            </span>
+                        </div>
+
+                        <!-- Centered Standardized Project Logo Frame -->
+                        <div class="relative z-10 logo-frame mb-5">
+                            <img src="imgs/projects/new/workbench-erp.png"
+                                alt="Workbench ERP Logo"
+                                class="logo-img-normalized">
+                        </div>
+
+                        <!-- Bottom Architecture Metadata Overlay -->
+                        <div class="absolute bottom-3 inset-x-5 z-10 flex items-center justify-between gap-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-blue-500/15 backdrop-blur-md border border-blue-500/30 text-blue-300 font-fira text-[11px] font-medium" data-key="proj_1_badge">
                                 Multi-Tenant ERP Architecture
                             </span>
-                            <span class="text-xs font-fira text-slate-400">NLT Software</span>
-                        </div>
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <div class="text-xs font-fira text-slate-400 mb-1" data-key="proj_1_role">Lead System Architect</div>
-                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors" data-key="proj_1_title">
-                                    Workbench ERP
-                                </h3>
-                            </div>
-                            <div class="w-11 h-11 rounded-xl bg-slate-800/80 border border-slate-700/70 flex items-center justify-center text-blue-400 group-hover:border-blue-500/40 group-hover:bg-blue-500/10 transition-all shrink-0">
-                                <i class="fas fa-network-wired text-lg"></i>
+                            <div class="text-xs font-fira text-slate-300 flex items-center gap-1.5">
+                                <i class="fas fa-user-shield text-blue-400 text-[10px]"></i>
+                                <span data-key="proj_1_role">Lead System Architect</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6">
+                    <!-- Card Body -->
+                    <div class="p-6 pb-5">
+                        <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors mb-2.5" data-key="proj_1_title">
+                            Workbench ERP
+                        </h3>
                         <p class="text-slate-300 text-sm leading-relaxed" data-key="proj_1_desc">
                             Architected and led the complete backend development from the ground up. Engineered sophisticated <strong class="text-slate-100 font-semibold">HR Management</strong> modules (attendance statistics, dynamic shift resolution, automated payroll) and <strong class="text-slate-100 font-semibold">Multi-Tenant Inventory</strong> systems (FIFO algorithms, stock validations, and accounting structures).
                         </p>
                     </div>
                 </div>
 
+                <!-- Tech Stack Footer -->
                 <div class="px-6 pb-6 pt-4 border-t border-slate-800/70">
                     <ul class="flex flex-wrap gap-2 font-fira text-xs">
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Laravel</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">FilamentPHP</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Livewire</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">MySQL</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">FIFO Inventory</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Automated Payroll</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10">Laravel</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10">FilamentPHP</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Livewire</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">MySQL</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">FIFO Inventory</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Automated Payroll</li>
                     </ul>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 2: Smart ERP Modules -->
-            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
+            <!-- Project 2: Smart ERP Modules (Smart Life Software) -->
+            <article class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
                 <div>
-                    <div class="p-6 pb-5 bg-slate-900/50 border-b border-slate-800/80 relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-fira text-xs font-medium" data-key="proj_2_badge">
+                    <!-- Minimalist Enterprise Browser Top Bar -->
+                    <div class="bg-[#090D16]/90 px-4 py-2.5 border-b border-slate-800/80 flex items-center justify-between gap-2" dir="ltr">
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-rose-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-amber-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-emerald-500/70 transition-colors"></span>
+                        </div>
+                        <div class="px-3 py-0.5 rounded bg-slate-900/90 border border-slate-800/90 text-[11px] font-fira text-slate-400 truncate flex items-center gap-1.5">
+                            <i class="fas fa-lock text-[9px] text-emerald-400"></i>
+                            <span>smart-erp.suite/assets-bom</span>
+                        </div>
+                        <span class="text-[11px] font-fira text-slate-400 shrink-0">Smart Life</span>
+                    </div>
+
+                    <!-- Standardized Logo Showcase Viewport -->
+                    <div class="relative h-60 overflow-hidden bg-[#0A0F1A] border-b border-slate-800/70 flex items-center justify-center p-6">
+                        <!-- Subtle Ambient Dashboard Backdrop -->
+                        <img src="imgs/projects/smart-erp.jpg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover object-center opacity-20 blur-[1px] scale-105 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F1623] via-[#090D16]/75 to-[#090D16]/60 pointer-events-none"></div>
+
+                        <!-- Top-End Status Pill -->
+                        <div class="absolute top-3.5 end-4 z-10">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#090D16]/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-fira text-slate-300">
+                                <i class="fas fa-industry text-indigo-400 text-[10px]"></i>
+                                ERP Modules
+                            </span>
+                        </div>
+
+                        <!-- Centered Standardized Project Logo Frame -->
+                        <div class="relative z-10 logo-frame mb-5">
+                            <img src="imgs/projects/new/smart-life.png"
+                                alt="Smart Life ERP Logo"
+                                class="logo-img-normalized">
+                        </div>
+
+                        <!-- Bottom Architecture Metadata Overlay -->
+                        <div class="absolute bottom-3 inset-x-5 z-10 flex items-center justify-between gap-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-indigo-500/15 backdrop-blur-md border border-indigo-500/30 text-indigo-300 font-fira text-[11px] font-medium" data-key="proj_2_badge">
                                 Enterprise ERP Modules
                             </span>
-                            <span class="text-xs font-fira text-slate-400">Smart Life Software</span>
-                        </div>
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <div class="text-xs font-fira text-slate-400 mb-1" data-key="proj_2_role">Full Stack ERP Engineer</div>
-                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors" data-key="proj_2_title">
-                                    Smart ERP: Assets &amp; Manufacturing
-                                </h3>
-                            </div>
-                            <div class="w-11 h-11 rounded-xl bg-slate-800/80 border border-slate-700/70 flex items-center justify-center text-indigo-400 group-hover:border-indigo-500/40 group-hover:bg-indigo-500/10 transition-all shrink-0">
-                                <i class="fas fa-industry text-lg"></i>
+                            <div class="text-xs font-fira text-slate-300 flex items-center gap-1.5">
+                                <i class="fas fa-code-branch text-indigo-400 text-[10px]"></i>
+                                <span data-key="proj_2_role">Full Stack ERP Engineer</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6">
+                    <!-- Card Body -->
+                    <div class="p-6 pb-5">
+                        <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors mb-2.5" data-key="proj_2_title">
+                            Smart ERP: Assets &amp; Manufacturing
+                        </h3>
                         <p class="text-slate-300 text-sm leading-relaxed" data-key="proj_2_desc">
                             Engineered two major independent modules within an integrated ERP ecosystem: a comprehensive <strong class="text-slate-100 font-semibold">Fixed Assets Management System</strong> and a <strong class="text-slate-100 font-semibold">Restaurant Manufacturing System</strong>, translating complex financial and operational rules into strict, consistent backend workflows.
                         </p>
                     </div>
                 </div>
 
+                <!-- Tech Stack Footer -->
                 <div class="px-6 pb-6 pt-4 border-t border-slate-800/70">
                     <ul class="flex flex-wrap gap-2 font-fira text-xs">
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">PHP / Laravel</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Fixed Assets Accounting</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Manufacturing BOM</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Relational DB</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-indigo-300 border-indigo-500/30 bg-indigo-500/10">PHP / Laravel</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Fixed Assets Accounting</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Manufacturing BOM</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Relational DB</li>
                     </ul>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 3: BawbtMIC School Management System -->
-            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
+            <!-- Project 3: BawbtMIC School Management System (Yottagate Software) -->
+            <article class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
                 <div>
-                    <div class="p-6 pb-5 bg-slate-900/50 border-b border-slate-800/80 relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/25 text-blue-400 font-fira text-xs font-medium" data-key="proj_3_badge">
+                    <!-- Minimalist Enterprise Browser Top Bar -->
+                    <div class="bg-[#090D16]/90 px-4 py-2.5 border-b border-slate-800/80 flex items-center justify-between gap-2" dir="ltr">
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-rose-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-amber-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-emerald-500/70 transition-colors"></span>
+                        </div>
+                        <div class="px-3 py-0.5 rounded bg-slate-900/90 border border-slate-800/90 text-[11px] font-fira text-slate-400 truncate flex items-center gap-1.5">
+                            <i class="fas fa-lock text-[9px] text-emerald-400"></i>
+                            <span>api.bawbtmic.edu/v1/sync</span>
+                        </div>
+                        <span class="text-[11px] font-fira text-slate-400 shrink-0">Yottagate</span>
+                    </div>
+
+                    <!-- Standardized Logo Showcase Viewport -->
+                    <div class="relative h-60 overflow-hidden bg-[#0A0F1A] border-b border-slate-800/70 flex items-center justify-center p-6">
+                        <!-- Subtle Ambient Code/Architecture Backdrop -->
+                        <img src="imgs/projects/cand3.jpg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover object-center opacity-20 blur-[1px] scale-105 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F1623] via-[#090D16]/75 to-[#090D16]/60 pointer-events-none"></div>
+
+                        <!-- Top-End Status Pill -->
+                        <div class="absolute top-3.5 end-4 z-10">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#090D16]/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-fira text-blue-400">
+                                <i class="fas fa-mobile-alt text-[10px]"></i>
+                                REST API + Admin
+                            </span>
+                        </div>
+
+                        <!-- Centered Standardized Project Logo Frame -->
+                        <div class="relative z-10 logo-frame mb-5">
+                            <img src="imgs/projects/new/bawabt-mic.png"
+                                alt="BawbtMIC — بوابة مايك البوابة الإلكترونية للمدارس"
+                                class="logo-img-normalized">
+                        </div>
+
+                        <!-- Bottom Architecture Metadata Overlay -->
+                        <div class="absolute bottom-3 inset-x-5 z-10 flex items-center justify-between gap-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-blue-500/15 backdrop-blur-md border border-blue-500/30 text-blue-300 font-fira text-[11px] font-medium" data-key="proj_3_badge">
                                 EdTech Platform &amp; Mobile API
                             </span>
-                            <span class="text-xs font-fira text-slate-400">Yottagate Software</span>
-                        </div>
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <div class="text-xs font-fira text-slate-400 mb-1" data-key="proj_3_role">Backend Architect</div>
-                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors" data-key="proj_3_title">
-                                    BawbtMIC — School Management
-                                </h3>
-                            </div>
-                            <div class="w-11 h-11 rounded-xl bg-slate-800/80 border border-slate-700/70 flex items-center justify-center text-blue-400 group-hover:border-blue-500/40 group-hover:bg-blue-500/10 transition-all shrink-0">
-                                <i class="fas fa-graduation-cap text-lg"></i>
+                            <div class="text-xs font-fira text-slate-300 flex items-center gap-1.5">
+                                <i class="fas fa-server text-blue-400 text-[10px]"></i>
+                                <span data-key="proj_3_role">Backend Architect</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6">
+                    <!-- Card Body -->
+                    <div class="p-6 pb-5">
+                        <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors mb-2.5" data-key="proj_3_title">
+                            BawbtMIC — School Management
+                        </h3>
                         <p class="text-slate-300 text-sm leading-relaxed" data-key="proj_3_desc">
                             Developed the core backend architecture and administrative dashboard for a large-scale educational management platform. Built and secured high-performance <strong class="text-slate-100 font-semibold">RESTful APIs</strong> for seamless, real-time data synchronization with mobile applications.
                         </p>
                     </div>
                 </div>
 
+                <!-- Tech Stack Footer -->
                 <div class="px-6 pb-6 pt-4 border-t border-slate-800/70">
                     <ul class="flex flex-wrap gap-2 font-fira text-xs">
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Laravel</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">RESTful APIs</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Real-Time Mobile Sync</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Admin Dashboard</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10">Laravel</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10">RESTful APIs</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Real-Time Mobile Sync</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Admin Dashboard</li>
                     </ul>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 4: Time & Attendance + E-Commerce Suite -->
-            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
+            <!-- Project 4: Time & Attendance + E-Commerce Suite (Cloud Snap Software) -->
+            <article class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between">
                 <div>
-                    <div class="p-6 pb-5 bg-slate-900/50 border-b border-slate-800/80 relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 font-fira text-xs font-medium" data-key="proj_4_badge">
+                    <!-- Minimalist Enterprise Browser Top Bar -->
+                    <div class="bg-[#090D16]/90 px-4 py-2.5 border-b border-slate-800/80 flex items-center justify-between gap-2" dir="ltr">
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-rose-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-amber-500/70 transition-colors"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-slate-700/80 group-hover:bg-emerald-500/70 transition-colors"></span>
+                        </div>
+                        <div class="px-3 py-0.5 rounded bg-slate-900/90 border border-slate-800/90 text-[11px] font-fira text-slate-400 truncate flex items-center gap-1.5">
+                            <i class="fas fa-lock text-[9px] text-emerald-400"></i>
+                            <span>portal.cloudsnap.io/analytics</span>
+                        </div>
+                        <span class="text-[11px] font-fira text-slate-400 shrink-0">Cloud Snap</span>
+                    </div>
+
+                    <!-- Standardized Logo Showcase Viewport -->
+                    <div class="relative h-60 overflow-hidden bg-[#0A0F1A] border-b border-slate-800/70 flex items-center justify-center p-6">
+                        <!-- Subtle Ambient Reporting Dashboard Backdrop -->
+                        <img src="imgs/projects/cand2.jpg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover object-center opacity-20 blur-[1px] scale-105 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F1623] via-[#090D16]/75 to-[#090D16]/60 pointer-events-none"></div>
+
+                        <!-- Top-End Status Pill -->
+                        <div class="absolute top-3.5 end-4 z-10">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#090D16]/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-fira text-slate-300">
+                                <i class="fas fa-chart-pie text-indigo-400 text-[10px]"></i>
+                                Reporting Engine
+                            </span>
+                        </div>
+
+                        <!-- Centered Standardized Brand Pedestal (Matching Dimensions 220x120) -->
+                        <div class="relative z-10 logo-frame mb-5 flex-col gap-1.5">
+                            <div class="flex items-center gap-2 text-slate-900">
+                                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-sm">
+                                    <i class="fas fa-cloud text-base"></i>
+                                </div>
+                                <div class="text-start leading-none" dir="ltr">
+                                    <div class="font-orbitron font-extrabold text-sm tracking-tight text-slate-900">CLOUD SNAP</div>
+                                    <div class="font-fira text-[9px] text-blue-600 font-semibold tracking-widest uppercase mt-0.5">HR &amp; Commerce Suite</div>
+                                </div>
+                            </div>
+                            <div class="w-full h-[1px] bg-slate-200 my-0.5"></div>
+                            <div class="flex items-center justify-between w-full text-[10px] font-fira text-slate-600 px-1" dir="ltr">
+                                <span><i class="fas fa-user-clock text-blue-600 me-1"></i>Attendance</span>
+                                <span>•</span>
+                                <span><i class="fas fa-shopping-bag text-indigo-600 me-1"></i>E-Commerce</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Architecture Metadata Overlay -->
+                        <div class="absolute bottom-3 inset-x-5 z-10 flex items-center justify-between gap-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-indigo-500/15 backdrop-blur-md border border-indigo-500/30 text-indigo-300 font-fira text-[11px] font-medium" data-key="proj_4_badge">
                                 HR Tech &amp; B2C/B2B E-Commerce
                             </span>
-                            <span class="text-xs font-fira text-slate-400">Cloud Snap Software</span>
-                        </div>
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <div class="text-xs font-fira text-slate-400 mb-1" data-key="proj_4_role">Full Stack Developer</div>
-                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors" data-key="proj_4_title">
-                                    Attendance Engine &amp; E-Commerce
-                                </h3>
-                            </div>
-                            <div class="w-11 h-11 rounded-xl bg-slate-800/80 border border-slate-700/70 flex items-center justify-center text-indigo-400 group-hover:border-indigo-500/40 group-hover:bg-indigo-500/10 transition-all shrink-0">
-                                <i class="fas fa-user-clock text-lg"></i>
+                            <div class="text-xs font-fira text-slate-300 flex items-center gap-1.5">
+                                <i class="fas fa-database text-indigo-400 text-[10px]"></i>
+                                <span data-key="proj_4_role">Full Stack Developer</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6">
+                    <!-- Card Body -->
+                    <div class="p-6 pb-5">
+                        <h3 class="text-xl md:text-2xl font-orbitron font-bold text-slate-50 group-hover:text-blue-400 transition-colors mb-2.5" data-key="proj_4_title">
+                            Attendance Engine &amp; E-Commerce
+                        </h3>
                         <p class="text-slate-300 text-sm leading-relaxed" data-key="proj_4_desc">
                             Designed a comprehensive <strong class="text-slate-100 font-semibold">Time &amp; Attendance tracking application</strong> featuring customized dynamic reporting engines, alongside a lightweight <strong class="text-slate-100 font-semibold">E-Commerce platform</strong> backed by normalized database schemas and optimized SQL queries.
                         </p>
                     </div>
                 </div>
 
+                <!-- Tech Stack Footer -->
                 <div class="px-6 pb-6 pt-4 border-t border-slate-800/70">
                     <ul class="flex flex-wrap gap-2 font-fira text-xs">
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Dynamic Reporting</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Schema Normalization</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">Query Optimization</li>
-                        <li class="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/60 text-slate-300">E-Commerce Workflows</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md text-indigo-300 border-indigo-500/30 bg-indigo-500/10">Dynamic Reporting</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Schema Normalization</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">Query Optimization</li>
+                        <li class="tech-pill px-2.5 py-1 rounded-md">E-Commerce Workflows</li>
                     </ul>
                 </div>
-            </div>
+            </article>
 
         </div>
     </div>
