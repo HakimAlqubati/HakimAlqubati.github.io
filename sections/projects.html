@@ -1,66 +1,176 @@
-<section id="projects" class="py-20 px-4">
+<section id="projects" class="py-20 px-6 bg-black/30">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-12">
-            <span class="text-cyber-purple">04.</span> <span data-key="section_projects">System Implementations</span>
-        </h2>
+        <div class="mb-14 gs-reveal">
+            <h2 class="text-3xl md:text-4xl font-orbitron font-bold flex items-center gap-4 mb-3">
+                <span class="text-cyber-purple">04.</span>
+                <span data-key="section_projects">Flagship ERP &amp; System Implementations</span>
+                <div class="h-[1px] bg-gradient-to-r from-cyber-purple/50 to-transparent flex-grow ms-4"></div>
+            </h2>
+            <p class="text-gray-400 font-fira text-xs md:text-sm" data-key="projects_subtitle">
+                Enterprise-grade systems, ERP modules, and scalable platforms architected and engineered across production environments.
+            </p>
+        </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div class="glass-card rounded-xl overflow-hidden group gs-reveal">
-                <div class="h-48 bg-gray-900 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-cyber-blue/10 group-hover:bg-transparent transition-all"></div>
-                    <!-- Mockup Visual -->
-                    <div class="w-full h-full flex items-center justify-center border-b border-white/10">
-                        <i
-                            class="fas fa-brain text-6xl text-gray-700 group-hover:text-cyber-blue group-hover:scale-110 transition-all duration-500"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-white group-hover:text-cyber-blue transition-colors">Neural
-                            API Gateway</h3>
-                        <div class="flex gap-4 text-gray-400">
-                            <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
-                            <a href="#" class="hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+
+            <!-- Project 1: Workbench ERP -->
+            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between border border-white/10">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-gray-900 via-cyber-dark to-black relative overflow-hidden p-6 flex flex-col justify-between border-b border-white/10">
+                        <div class="absolute inset-0 bg-cyber-blue/10 group-hover:bg-cyber-blue/15 transition-all"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-cyber-blue/20 border border-cyber-blue/40 text-cyber-blue font-fira text-xs font-semibold" data-key="proj_1_badge">
+                                Multi-Tenant ERP Architecture
+                            </span>
+                            <span class="text-xs font-fira text-gray-400">NLT Software</span>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs font-fira text-cyber-green mb-1" data-key="proj_1_role">Lead System Architect</div>
+                                <h3 class="text-2xl font-orbitron font-bold text-white group-hover:text-cyber-blue transition-colors" data-key="proj_1_title">
+                                    Workbench ERP
+                                </h3>
+                            </div>
+                            <i class="fas fa-network-wired text-4xl text-cyber-blue/50 group-hover:text-cyber-blue group-hover:scale-110 transition-all duration-500"></i>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4" data-key="proj_1_desc">A high-performance API gateway with
-                        AI-based traffic analysis and anomaly detection built in Go.</p>
-                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-purple">
-                        <li>Go</li>
-                        <li>gRPC</li>
-                        <li>TensorFlow</li>
+
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4" data-key="proj_1_desc">
+                            Architected and led the complete backend development from the ground up. Engineered sophisticated <strong class="text-white">HR Management</strong> modules (attendance statistics, dynamic shift resolution, automated payroll) and <strong class="text-white">Multi-Tenant Inventory</strong> systems (FIFO algorithms, stock validations, and accounting structures).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 pt-3 border-t border-white/5">
+                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-blue">
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Laravel</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">FilamentPHP</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Livewire</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">MySQL</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">FIFO Inventory</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Automated Payroll</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="glass-card rounded-xl overflow-hidden group gs-reveal">
-                <div class="h-48 bg-gray-900 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-cyber-purple/10 group-hover:bg-transparent transition-all"></div>
-                    <div class="w-full h-full flex items-center justify-center border-b border-white/10">
-                        <i
-                            class="fas fa-cloud-upload-alt text-6xl text-gray-700 group-hover:text-cyber-purple group-hover:scale-110 transition-all duration-500"></i>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-white group-hover:text-cyber-purple transition-colors">
-                            Distributed Cache System</h3>
-                        <div class="flex gap-4 text-gray-400">
-                            <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
-                            <a href="#" class="hover:text-white"><i class="fas fa-external-link-alt"></i></a>
+            <!-- Project 2: Smart ERP Modules -->
+            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between border border-white/10">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-gray-900 via-cyber-dark to-black relative overflow-hidden p-6 flex flex-col justify-between border-b border-white/10">
+                        <div class="absolute inset-0 bg-cyber-purple/10 group-hover:bg-cyber-purple/15 transition-all"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-cyber-purple/20 border border-cyber-purple/40 text-cyber-purple font-fira text-xs font-semibold" data-key="proj_2_badge">
+                                Enterprise ERP Modules
+                            </span>
+                            <span class="text-xs font-fira text-gray-400">Smart Life Software</span>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs font-fira text-cyber-purple mb-1" data-key="proj_2_role">Full Stack ERP Engineer</div>
+                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-white group-hover:text-cyber-purple transition-colors" data-key="proj_2_title">
+                                    Smart ERP: Assets &amp; Manufacturing
+                                </h3>
+                            </div>
+                            <i class="fas fa-industry text-4xl text-cyber-purple/50 group-hover:text-cyber-purple group-hover:scale-110 transition-all duration-500"></i>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4" data-key="proj_2_desc">Custom implementation of a distributed
-                        caching mechanism using consistent hashing.</p>
-                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-blue">
-                        <li>Rust</li>
-                        <li>Redis</li>
-                        <li>Docker</li>
+
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4" data-key="proj_2_desc">
+                            Engineered two major independent modules within an integrated ERP ecosystem: a comprehensive <strong class="text-white">Fixed Assets Management System</strong> and a <strong class="text-white">Restaurant Manufacturing System</strong>, translating complex financial and operational rules into strict, consistent backend workflows.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 pt-3 border-t border-white/5">
+                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-purple">
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">PHP / Laravel</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Fixed Assets Accounting</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Manufacturing BOM</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Relational DB</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Project 3: BawbtMIC School Management System -->
+            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between border border-white/10">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-gray-900 via-cyber-dark to-black relative overflow-hidden p-6 flex flex-col justify-between border-b border-white/10">
+                        <div class="absolute inset-0 bg-amber-400/10 group-hover:bg-amber-400/15 transition-all"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-400 font-fira text-xs font-semibold" data-key="proj_3_badge">
+                                EdTech Platform &amp; Mobile API
+                            </span>
+                            <span class="text-xs font-fira text-gray-400">Yottagate Software</span>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs font-fira text-amber-400 mb-1" data-key="proj_3_role">Backend Architect</div>
+                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-white group-hover:text-amber-400 transition-colors" data-key="proj_3_title">
+                                    BawbtMIC — School Management
+                                </h3>
+                            </div>
+                            <i class="fas fa-graduation-cap text-4xl text-amber-400/50 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4" data-key="proj_3_desc">
+                            Developed the core backend architecture and administrative dashboard for a large-scale educational management platform. Built and secured high-performance <strong class="text-white">RESTful APIs</strong> for seamless, real-time data synchronization with mobile applications.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 pt-3 border-t border-white/5">
+                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-amber-400">
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Laravel</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">RESTful APIs</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Real-Time Mobile Sync</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Admin Dashboard</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 4: Time & Attendance + E-Commerce Suite -->
+            <div class="glass-card rounded-2xl overflow-hidden group gs-reveal flex flex-col justify-between border border-white/10">
+                <div>
+                    <div class="h-44 bg-gradient-to-br from-gray-900 via-cyber-dark to-black relative overflow-hidden p-6 flex flex-col justify-between border-b border-white/10">
+                        <div class="absolute inset-0 bg-cyber-green/10 group-hover:bg-cyber-green/15 transition-all"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="px-3 py-1 rounded-full bg-cyber-green/20 border border-cyber-green/40 text-cyber-green font-fira text-xs font-semibold" data-key="proj_4_badge">
+                                HR Tech &amp; B2C/B2B E-Commerce
+                            </span>
+                            <span class="text-xs font-fira text-gray-400">Cloud Snap Software</span>
+                        </div>
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs font-fira text-cyber-green mb-1" data-key="proj_4_role">Full Stack Developer</div>
+                                <h3 class="text-xl md:text-2xl font-orbitron font-bold text-white group-hover:text-cyber-green transition-colors" data-key="proj_4_title">
+                                    Attendance Engine &amp; E-Commerce
+                                </h3>
+                            </div>
+                            <i class="fas fa-user-clock text-4xl text-cyber-green/50 group-hover:text-cyber-green group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4" data-key="proj_4_desc">
+                            Designed a comprehensive <strong class="text-white">Time &amp; Attendance tracking application</strong> featuring customized dynamic reporting engines, alongside a lightweight <strong class="text-white">E-Commerce platform</strong> backed by normalized database schemas and optimized SQL queries.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 pt-3 border-t border-white/5">
+                    <ul class="flex flex-wrap gap-2 font-fira text-xs text-cyber-green">
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Dynamic Reporting</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Schema Normalization</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">Query Optimization</li>
+                        <li class="px-2.5 py-1 rounded bg-white/5 border border-white/10">E-Commerce Workflows</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

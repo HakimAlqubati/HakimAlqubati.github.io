@@ -1,105 +1,165 @@
-<section class="min-h-screen flex items-center relative pt-20 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full z-10">
-        <!-- Text Content -->
-        <div class="text-center md:text-left order-2 md:order-1 relative z-20">
-            <p class="text-cyber-green font-fira mb-4 text-xs md:text-sm tracking-[0.2em] uppercase"
-                data-key="hero_greeting">System Online // Identity Verified</p>
-            <h1 class="text-5xl md:text-7xl font-orbitron font-black text-white mb-6 leading-none gs-reveal">
-                HAKIM <br>
+<section class="min-h-screen flex items-center relative pt-28 pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center w-full z-10">
+
+        <!-- Text Content (7 Columns) -->
+        <div class="lg:col-span-7 text-center lg:text-start order-2 lg:order-1 relative z-20">
+            <!-- Status & Location Badges -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5">
                 <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">ALQUBATI</span>
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-green/10 border border-cyber-green/30 text-cyber-green font-fira text-xs tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-cyber-green animate-ping"></span>
+                    <span data-key="hero_greeting">SYSTEM ARCHITECT // BACKEND ENGINEER</span>
+                </span>
+                <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 font-fira text-xs">
+                    <i class="fas fa-map-marker-alt text-cyber-blue"></i>
+                    <span data-key="hero_location">Sana'a, Yemen</span>
+                </span>
+            </div>
+
+            <!-- Main Name Heading -->
+            <h1 class="text-4xl sm:text-6xl xl:text-7xl font-orbitron font-black text-white mb-2 leading-tight gs-reveal">
+                <span data-key="hero_first_name">ABDULHAKIM</span> <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyan-300 to-cyber-purple drop-shadow-[0_0_12px_rgba(0,243,255,0.3)]"
+                    data-key="hero_last_name">ALQUBATI</span>
             </h1>
 
-            <div class="mb-8 pl-4 border-l-2 border-cyber-blue/30 mx-auto md:mx-0 max-w-md md:max-w-none text-left">
-                <div class="text-xl md:text-2xl font-fira text-gray-300 flex items-center gap-3">
-                    <span class="text-cyber-purple">></span>
-                    <span id="typewriter" class="text-white font-semibold"></span>
+            <p class="text-xs sm:text-sm font-fira text-gray-400 mb-6 tracking-wide" data-key="hero_full_name">
+                Abdulhakim Ahmed Fadl Qaid — System Architect &amp; Backend Web Developer
+            </p>
+
+            <!-- Typewriter Terminal Line -->
+            <div
+                class="mb-6 ps-4 border-s-2 border-cyber-blue/50 mx-auto lg:mx-0 max-w-lg lg:max-w-none text-start bg-white/[0.02] py-2.5 px-4 rounded-e-lg">
+                <div class="text-lg md:text-2xl font-fira text-gray-200 flex items-center gap-3">
+                    <span class="text-cyber-purple font-bold">&gt;</span>
+                    <span id="typewriter" class="text-cyber-blue font-semibold"></span>
                     <span class="blink text-cyber-green text-2xl">|</span>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center md:justify-start gap-5 mt-10">
+            <!-- Hero Summary Pitch -->
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
+                data-key="hero_pitch">
+                Designing and building scalable <strong class="text-white">SaaS applications</strong>, multi-tenant
+                <strong class="text-cyber-blue">Enterprise Resource Planning (ERP)</strong> systems, and <strong
+                    class="text-white">B2B platforms</strong>. Specializing in the <strong
+                    class="text-cyber-purple">Laravel ecosystem</strong> and normalized relational database architectures
+                that automate complex business workflows.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
                 <a href="#projects"
-                    class="group relative px-8 py-3 bg-cyber-blue/5 overflow-hidden rounded border border-cyber-blue/30 text-cyber-blue font-fira tracking-wider hover:text-black transition-all duration-300"
-                    data-key="btn_projects">
-                    <div
-                        class="absolute inset-0 w-0 bg-cyber-blue transition-all duration-[250ms] ease-out group-hover:w-full">
-                    </div>
-                    <span class="relative">View Protocol_</span>
+                    class="group relative px-7 py-3.5 bg-cyber-blue text-black font-fira font-semibold text-sm tracking-wider rounded hover:bg-cyan-300 transition-all duration-300 shadow-[0_0_20px_rgba(0,243,255,0.3)] flex items-center gap-2">
+                    <i class="fas fa-sitemap"></i>
+                    <span data-key="btn_projects">Explore ERP &amp; Systems</span>
+                </a>
+                <a href="#experience"
+                    class="px-7 py-3.5 glass-card border border-cyber-purple/40 text-white font-fira text-sm tracking-wider hover:border-cyber-purple hover:text-cyber-purple transition-all duration-300 rounded flex items-center gap-2">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-key="btn_exp">Experience Log</span>
                 </a>
                 <a href="#contact"
-                    class="group px-8 py-3 bg-transparent border border-white/10 text-gray-300 font-fira tracking-wider hover:border-cyber-purple hover:text-cyber-purple transition-all duration-300 rounded"
-                    data-key="btn_contact">
-                    <span class="relative">Initiate Uplink</span>
+                    class="px-6 py-3.5 bg-transparent border border-white/15 text-gray-300 font-fira text-sm tracking-wider hover:border-cyber-green hover:text-cyber-green transition-all duration-300 rounded flex items-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    <span data-key="btn_contact">Contact Me</span>
+                </a>
+            </div>
+
+            <!-- Quick Contact Strip -->
+            <div
+                class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-fira text-gray-400 border-t border-white/10 pt-5">
+                <a href="mailto:hakimahmed123321@gmail.com"
+                    class="hover:text-cyber-blue transition-colors flex items-center gap-2">
+                    <i class="fas fa-envelope text-cyber-blue"></i>
+                    <span>hakimahmed123321@gmail.com</span>
+                </a>
+                <span class="hidden sm:inline text-gray-700">|</span>
+                <a href="https://wa.me/967773030069" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-cyber-green transition-colors flex items-center gap-2" dir="ltr">
+                    <i class="fab fa-whatsapp text-cyber-green text-sm"></i>
+                    <span>+967 773 030 069</span>
                 </a>
             </div>
         </div>
 
-        <!-- Professional Tech Frame Image -->
-        <div class="flex justify-center md:justify-end order-1 md:order-2 gs-reveal relative z-10 md:pr-10">
-            <div class="relative w-72 h-72 md:w-[30rem] md:h-[30rem] flex justify-center items-center group">
+        <!-- Professional Tech Frame Image (5 Columns) -->
+        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2 gs-reveal relative z-10">
+            <div class="relative w-72 h-72 sm:w-96 sm:h-96 xl:w-[27rem] xl:h-[27rem] flex justify-center items-center group">
                 <!-- Ambient Backdrop Glow -->
                 <div
-                    class="absolute inset-0 bg-cyber-blue/10 blur-[80px] rounded-full group-hover:bg-cyber-purple/10 transition-colors duration-1000">
+                    class="absolute inset-0 bg-cyber-blue/15 blur-[80px] rounded-full group-hover:bg-cyber-purple/20 transition-colors duration-1000">
                 </div>
 
-                <!-- Animated Geometric Elements (Subtle) -->
+                <!-- Animated Geometric Borders -->
                 <div
-                    class="absolute inset-0 border border-white/5 rounded-[40px] rotate-3 scale-105 group-hover:rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
+                    class="absolute inset-0 border border-cyber-blue/20 rounded-[36px] rotate-3 scale-105 group-hover:rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
                 </div>
                 <div
-                    class="absolute inset-0 border border-white/5 rounded-[40px] -rotate-3 scale-105 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
+                    class="absolute inset-0 border border-cyber-purple/20 rounded-[36px] -rotate-3 scale-105 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-700 ease-out">
                 </div>
 
                 <!-- Main Image Container -->
                 <div
-                    class="relative w-full h-full rounded-[30px] overflow-hidden border border-white/10 shadow-2xl bg-gray-900/50 backdrop-blur-sm">
+                    class="relative w-full h-full rounded-[28px] overflow-hidden border border-white/15 shadow-2xl bg-gray-900/60 backdrop-blur-sm">
                     <!-- Tech Overlay Scanline -->
                     <div
                         class="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-blue/5 to-transparent bg-[length:100%_4px] opacity-20 pointer-events-none z-20">
                     </div>
 
-                    <!-- Image -->
-                    <img src="imgs/hakim-1.png" alt="Hakim Alqubati"
-                        class="w-full h-full object-cover object-top filter contrast-[1.1] brightness-[1.1] sepia-[0.1] group-hover:sepia-0 transition-all duration-700">
+                    <!-- Profile Image -->
+                    <img src="imgs/hakim-1.png" alt="Abdulhakim Ahmed Fadl Qaid - System Architect"
+                        class="w-full h-full object-cover object-top filter contrast-[1.06] brightness-[1.05] group-hover:scale-105 transition-all duration-700">
 
                     <!-- Inner Tech UI Overlay -->
                     <div
-                        class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-30">
-                        <div class="flex justify-between items-end border-b border-white/10 pb-3">
-                            <div>
-                                <div class="text-[10px] font-fira text-cyber-blue/80 tracking-[0.2em] mb-1">DESIGNATION
-                                </div>
-                                <div class="text-sm font-orbitron text-white">SR. ARCHITECT</div>
+                        class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/95 via-black/70 to-transparent z-30">
+                        <div class="flex justify-between items-end border-b border-white/15 pb-2.5">
+                            <div class="text-start">
+                                <div class="text-[10px] font-fira text-cyber-blue tracking-[0.18em] mb-0.5"
+                                    data-key="hud_role_label">CURRENT ROLE</div>
+                                <div class="text-xs sm:text-sm font-orbitron font-bold text-white"
+                                    data-key="hud_role_val">SYSTEM ARCHITECT @ NLT</div>
                             </div>
                             <div class="flex flex-col items-end">
                                 <div class="flex gap-1 mb-1">
-                                    <div class="w-1 h-1 bg-cyber-blue rounded-full"></div>
-                                    <div class="w-1 h-1 bg-cyber-blue rounded-full opacity-50"></div>
-                                    <div class="w-1 h-1 bg-cyber-blue rounded-full opacity-25"></div>
+                                    <div class="w-1.5 h-1.5 bg-cyber-blue rounded-full"></div>
+                                    <div class="w-1.5 h-1.5 bg-cyber-purple rounded-full"></div>
+                                    <div class="w-1.5 h-1.5 bg-cyber-green rounded-full"></div>
                                 </div>
-                                <div class="text-[10px] font-fira text-green-500 tracking-widest animate-pulse">ONLINE
-                                </div>
+                                <div class="text-[10px] font-fira text-cyber-green tracking-widest animate-pulse"
+                                    data-key="hud_status">ACTIVE SINCE 2019</div>
                             </div>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 text-[10px] font-fira text-gray-400">
+                            <span>Laravel • FilamentPHP • Livewire</span>
+                            <span class="text-cyber-blue">ERP &amp; SaaS</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- External Tech Accents (Corners) -->
                 <div
-                    class="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-cyber-blue/40 rounded-tl-xl z-20 transition-all duration-500 group-hover:border-cyber-blue group-hover:-top-4 group-hover:-left-4">
+                    class="absolute -top-3 -left-3 w-14 h-14 border-t-2 border-l-2 border-cyber-blue/60 rounded-tl-xl z-20 transition-all duration-500 group-hover:border-cyber-blue group-hover:-top-4 group-hover:-left-4">
                 </div>
                 <div
-                    class="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-cyber-purple/40 rounded-br-xl z-20 transition-all duration-500 group-hover:border-cyber-purple group-hover:-bottom-4 group-hover:-right-4">
+                    class="absolute -bottom-3 -right-3 w-14 h-14 border-b-2 border-r-2 border-cyber-purple/60 rounded-br-xl z-20 transition-all duration-500 group-hover:border-cyber-purple group-hover:-bottom-4 group-hover:-right-4">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-        <span class="text-[10px] font-fira tracking-widest text-cyber-blue">SCROLL</span>
-        <div class="w-[1px] h-12 bg-gradient-to-b from-cyber-blue to-transparent"></div>
+    <!-- Key Metrics Bar at Bottom of Hero -->
+    <div class="max-w-7xl mx-auto px-6 w-full mt-12 hidden md:block">
+        <!-- Rendered inside main hero container flow if needed, or we keep Scroll Indicator -->
     </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#about"
+        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+        <span class="text-[10px] font-fira tracking-widest text-cyber-blue" data-key="scroll_down">SCROLL</span>
+        <div class="w-[1px] h-8 bg-gradient-to-b from-cyber-blue to-transparent"></div>
+    </a>
 </section>

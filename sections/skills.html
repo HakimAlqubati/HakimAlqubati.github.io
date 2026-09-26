@@ -1,66 +1,163 @@
-<section id="skills" class="py-20 px-4 bg-black/30">
+<section id="skills" class="py-20 px-6 bg-black/40 relative">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-16 text-center">
-            <span class="text-cyber-green">02.</span> <span data-key="section_skills">Tech Architecture</span>
-        </h2>
+        <div class="text-center mb-16 gs-reveal">
+            <h2 class="text-3xl md:text-4xl font-orbitron font-bold mb-3">
+                <span class="text-cyber-green">02.</span>
+                <span data-key="section_skills">Technical Skills &amp; Architecture</span>
+            </h2>
+            <p class="text-gray-400 font-fira text-xs md:text-sm max-w-2xl mx-auto" data-key="skills_subtitle">
+                Specialized stack for building high-availability ERP systems, multi-tenant SaaS, and normalized database architectures.
+            </p>
+        </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Skill Card Template -->
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fab fa-golang text-4xl mb-4 text-gray-400 group-hover:text-cyber-blue transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">GoLang</h3>
-                <p class="text-xs text-gray-500 font-fira">High Concurrency</p>
+        <!-- 5 Categorized Skill Cards Matching CV -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 1. Backend & Frameworks -->
+            <div class="skill-card glass-card p-6 rounded-2xl border-t-2 border-cyber-blue flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center text-cyber-blue">
+                                <i class="fab fa-laravel text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-white text-base" data-key="skill_cat_1">Backend &amp; Frameworks</h3>
+                                <span class="text-[11px] font-fira text-cyber-blue" data-key="skill_cat_1_sub">Core Ecosystem</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-php text-2xl text-gray-500"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-5 leading-relaxed" data-key="skill_cat_1_desc">
+                        Architecting clean, modular backend engines, admin panels, reactive full-stack components, and secure APIs.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-fira text-xs">
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white font-semibold border-cyber-blue/40 bg-cyber-blue/10">PHP</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white font-semibold border-cyber-blue/40 bg-cyber-blue/10">Laravel</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-cyber-blue border-cyber-blue/30">FilamentPHP</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200">Livewire</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200">RESTful APIs</span>
+                </div>
             </div>
 
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fab fa-python text-4xl mb-4 text-gray-400 group-hover:text-yellow-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">Python</h3>
-                <p class="text-xs text-gray-500 font-fira">AI & Data</p>
+            <!-- 2. Database Architecture -->
+            <div class="skill-card glass-card p-6 rounded-2xl border-t-2 border-cyber-purple flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple">
+                                <i class="fas fa-database text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-white text-base" data-key="skill_cat_2">Database Architecture</h3>
+                                <span class="text-[11px] font-fira text-cyber-purple" data-key="skill_cat_2_sub">Data Modeling &amp; SQL</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-project-diagram text-xl text-gray-500"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-5 leading-relaxed" data-key="skill_cat_2_desc">
+                        Designing normalized relational schemas, analyzing complex business logic, and optimizing high-volume queries.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-fira text-xs">
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white font-semibold border-cyber-purple/40 bg-cyber-purple/10" data-key="tag_rel_db">Relational DB Design</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-cyber-purple" data-key="tag_schema_norm">Schema Normalization</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200" data-key="tag_biz_logic">Business Logic Analysis</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200" data-key="tag_query_opt">Query Optimization</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white">MySQL</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white">PostgreSQL</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-300">SQLite</span>
+                </div>
             </div>
 
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fab fa-docker text-4xl mb-4 text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">Docker</h3>
-                <p class="text-xs text-gray-500 font-fira">Containerization</p>
+            <!-- 3. Cloud & Infrastructure -->
+            <div class="skill-card glass-card p-6 rounded-2xl border-t-2 border-cyber-green flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyber-green/10 border border-cyber-green/30 flex items-center justify-center text-cyber-green">
+                                <i class="fab fa-aws text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-white text-base" data-key="skill_cat_3">Cloud &amp; Infrastructure</h3>
+                                <span class="text-[11px] font-fira text-cyber-green" data-key="skill_cat_3_sub">AWS &amp; Linux Servers</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-linux text-2xl text-gray-500"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-5 leading-relaxed" data-key="skill_cat_3_desc">
+                        Cloud services integration, AI image recognition (AWS Rekognition), edge protection, and Linux VPS administration.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-fira text-xs">
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white font-semibold border-cyber-green/40 bg-cyber-green/10">AWS S3</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white font-semibold border-cyber-green/40 bg-cyber-green/10">AWS DynamoDB</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-cyber-green">AWS Rekognition</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200">Cloudflare</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-200" data-key="tag_linux_vps">Linux Server Admin (VPS)</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-gray-300">aaPanel</span>
+                </div>
             </div>
 
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fas fa-cubes text-4xl mb-4 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">Kubernetes</h3>
-                <p class="text-xs text-gray-500 font-fira">Orchestration</p>
+            <!-- 4. Frontend Technologies -->
+            <div class="skill-card glass-card p-6 rounded-2xl border-t-2 border-cyan-400 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+                                <i class="fas fa-laptop-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-white text-base" data-key="skill_cat_4">Frontend Technologies</h3>
+                                <span class="text-[11px] font-fira text-cyan-400" data-key="skill_cat_4_sub">Responsive UI &amp; Web</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-js text-xl text-gray-500"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-5 leading-relaxed" data-key="skill_cat_4_desc">
+                        Building clean, responsive dashboards, interactive interfaces, and corporate web platforms.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 font-fira text-xs">
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white">HTML5</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white">CSS3</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-cyan-400 font-semibold border-cyan-400/40 bg-cyan-400/10">Tailwind CSS</span>
+                    <span class="tech-pill px-3 py-1.5 rounded-lg text-white">JavaScript</span>
+                </div>
             </div>
 
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fas fa-database text-4xl mb-4 text-gray-400 group-hover:text-green-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">PostgreSQL</h3>
-                <p class="text-xs text-gray-500 font-fira">Relational DB</p>
+            <!-- 5. Tools & Workflows -->
+            <div class="skill-card glass-card p-6 rounded-2xl border-t-2 border-amber-400 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                                <i class="fas fa-tools text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-orbitron font-bold text-white text-base" data-key="skill_cat_5">Tools, DevOps &amp; Engineering Workflows</h3>
+                                <span class="text-[11px] font-fira text-amber-400" data-key="skill_cat_5_sub">Development Environment &amp; Domain Expertise</span>
+                            </div>
+                        </div>
+                        <i class="fab fa-github text-2xl text-gray-500"></i>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-5 leading-relaxed" data-key="skill_cat_5_desc">
+                        Streamlined version control, local development environments, database management, API testing, and enterprise domain workflows.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2.5 font-fira text-xs">
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-white font-semibold border-amber-400/40 bg-amber-400/10"><i class="fab fa-git-alt me-1.5 text-amber-400"></i>Git</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-white font-semibold border-amber-400/40 bg-amber-400/10"><i class="fab fa-github me-1.5 text-amber-400"></i>GitHub</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-gray-200"><i class="fas fa-server me-1.5 text-cyber-blue"></i>Laragon</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-gray-200"><i class="fas fa-table me-1.5 text-cyber-purple"></i>TablePlus</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-gray-200"><i class="fas fa-exchange-alt me-1.5 text-cyber-green"></i>Insomnia</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-cyber-blue" data-key="tag_fifo">FIFO Inventory Algorithms</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-cyber-purple" data-key="tag_multitenant">Multi-Tenant SaaS</span>
+                    <span class="tech-pill px-3.5 py-1.5 rounded-lg text-cyber-green" data-key="tag_hr_payroll">HR &amp; Automated Payroll</span>
+                </div>
             </div>
 
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fas fa-bolt text-4xl mb-4 text-gray-400 group-hover:text-red-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">Redis</h3>
-                <p class="text-xs text-gray-500 font-fira">Caching</p>
-            </div>
-
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fas fa-server text-4xl mb-4 text-gray-400 group-hover:text-purple-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">gRPC</h3>
-                <p class="text-xs text-gray-500 font-fira">Microservices</p>
-            </div>
-
-            <div
-                class="skill-card glass-card p-6 rounded-lg text-center hover:bg-white/5 transition-all group gs-reveal-up">
-                <i class="fab fa-aws text-4xl mb-4 text-gray-400 group-hover:text-orange-400 transition-colors"></i>
-                <h3 class="font-orbitron font-bold text-white mb-2">AWS</h3>
-                <p class="text-xs text-gray-500 font-fira">Cloud Infra</p>
-            </div>
         </div>
     </div>
 </section>
