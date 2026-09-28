@@ -1,114 +1,138 @@
-<section id="contact" class="py-20 px-6 relative">
-    <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-14 gs-reveal">
-            <h2 class="text-2xl md:text-3xl font-orbitron font-bold text-slate-50 mb-3 tracking-tight">
-                <span class="text-blue-400 font-fira text-lg font-semibold me-2">05.</span>
-                <span data-key="section_contact">Initialize Handshake</span>
-            </h2>
-            <p class="text-slate-400 text-xs md:text-sm max-w-xl mx-auto" data-key="contact_subtitle">
+<section id="contact" class="pt-10 pb-6 relative">
+    <!-- Section Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 gs-reveal">
+        <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/25 text-blue-400 font-fira text-xs font-semibold">05</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-orbitron font-bold text-slate-50 tracking-tight" data-key="section_contact">
+                    Initialize Handshake
+                </h2>
+            </div>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-xl" data-key="contact_subtitle">
                 Available for System Architecture consulting, Enterprise ERP/SaaS development, and Backend Engineering opportunities.
             </p>
         </div>
+        <span class="text-[11px] font-fira text-slate-500 hidden md:inline-block shrink-0">BENTO // DIRECT CHANNELS</span>
+    </div>
 
-        <!-- Direct Contact Cards -->
-        <div class="grid md:grid-cols-3 gap-5 mb-10 gs-reveal">
-            <!-- Email Card -->
+    <!-- 12-Column Contact Bento Grid (4-Col Channel Stack + 8-Col Inquiry Console) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-5 items-stretch">
+
+        <!-- Left Bento Stack: Direct Contact Channels (4 Columns) -->
+        <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+
+            <!-- Email Bento Tile -->
             <a href="mailto:hakimahmed123321@gmail.com"
-                class="glass-card p-5 rounded-2xl flex items-center gap-4 group">
-                <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all shrink-0">
-                    <i class="fas fa-envelope text-lg"></i>
-                </div>
-                <div class="overflow-hidden">
-                    <div class="text-xs font-fira text-slate-400 mb-0.5" data-key="contact_email_label">Direct Email</div>
-                    <div class="text-xs sm:text-sm font-fira text-slate-100 font-medium truncate group-hover:text-blue-400 transition-colors">
-                        hakimahmed123321@gmail.com
+                class="bento-card p-5 flex items-center justify-between gap-3 group gs-reveal">
+                <div class="flex items-center gap-3.5 overflow-hidden">
+                    <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all shrink-0">
+                        <i class="fas fa-envelope text-base"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                        <div class="text-[11px] font-fira text-slate-400 mb-0.5" data-key="contact_email_label">Direct Email</div>
+                        <div class="text-xs sm:text-sm font-fira text-slate-100 font-medium truncate group-hover:text-blue-400 transition-colors">
+                            hakimahmed123321@gmail.com
+                        </div>
                     </div>
                 </div>
+                <i class="fas fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-blue-400 transition-colors shrink-0 hidden sm:inline-block"></i>
             </a>
 
-            <!-- Phone / WhatsApp Card -->
+            <!-- Phone / WhatsApp Bento Tile -->
             <a href="https://wa.me/967773030069" target="_blank" rel="noopener noreferrer"
-                class="glass-card p-5 rounded-2xl flex items-center gap-4 group">
-                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-500 transition-all shrink-0">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                </div>
-                <div>
-                    <div class="text-xs font-fira text-slate-400 mb-0.5" data-key="contact_phone_label">Phone &amp; WhatsApp</div>
-                    <div class="text-sm font-fira text-slate-100 font-medium group-hover:text-emerald-400 transition-colors" dir="ltr">
-                        +967 773 030 069
+                class="bento-card p-5 flex items-center justify-between gap-3 group gs-reveal">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-500 transition-all shrink-0">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-fira text-slate-400 mb-0.5" data-key="contact_phone_label">Phone &amp; WhatsApp</div>
+                        <div class="text-xs sm:text-sm font-fira text-slate-100 font-medium group-hover:text-emerald-400 transition-colors" dir="ltr">
+                            +967 773 030 069
+                        </div>
                     </div>
                 </div>
+                <i class="fas fa-arrow-up-right-from-square text-xs text-slate-600 group-hover:text-emerald-400 transition-colors shrink-0 hidden sm:inline-block"></i>
             </a>
 
-            <!-- Location Card -->
-            <div class="glass-card p-5 rounded-2xl flex items-center gap-4">
-                <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                    <i class="fas fa-map-marker-alt text-lg"></i>
-                </div>
-                <div>
-                    <div class="text-xs font-fira text-slate-400 mb-0.5" data-key="contact_loc_label">Location Base</div>
-                    <div class="text-sm font-fira text-slate-100 font-medium" data-key="contact_loc_val">
-                        Sana'a, Yemen (Remote Ready)
+            <!-- Location & Availability Bento Tile -->
+            <div class="bento-card p-5 flex flex-col justify-between gap-3 gs-reveal">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center text-indigo-400 shrink-0">
+                        <i class="fas fa-map-marker-alt text-base"></i>
                     </div>
+                    <div>
+                        <div class="text-[11px] font-fira text-slate-400 mb-0.5" data-key="contact_loc_label">Location Base</div>
+                        <div class="text-xs sm:text-sm font-fira text-slate-100 font-medium" data-key="contact_loc_val">
+                            Sana'a, Yemen (Remote Ready)
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-fira text-slate-400">
+                    <span class="inline-flex items-center gap-1.5 text-emerald-400">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        Remote &amp; On-Site
+                    </span>
+                    <span>UTC+3</span>
                 </div>
             </div>
+
         </div>
 
-        <!-- Minimalist Enterprise Inquiry Console -->
-        <div
-            class="glass-card rounded-2xl overflow-hidden gs-reveal">
+        <!-- Right Bento Cell: Minimalist Enterprise Inquiry Console (8 Columns) -->
+        <div class="lg:col-span-8 bento-card overflow-hidden flex flex-col justify-between gs-reveal">
             <!-- Console Header -->
-            <div class="bg-slate-900/90 px-6 py-3.5 flex items-center justify-between border-b border-slate-800/80" dir="ltr">
+            <div class="bg-[#060911]/95 px-5 py-3 flex items-center justify-between border-b border-white/[0.06]" dir="ltr">
                 <div class="flex items-center gap-2">
                     <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                    <div class="ms-3 font-fira text-slate-400 text-xs">abdulhakim@architect-node:~/contact</div>
+                    <div class="ms-2 font-fira text-slate-400 text-xs truncate">abdulhakim@architect-node:~/contact</div>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[11px] font-fira text-emerald-400">
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-fira text-emerald-400 shrink-0">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     TLS 1.3
                 </span>
             </div>
 
             <!-- Console Form Body -->
-            <div class="p-6 md:p-8 text-slate-300">
-                <div class="mb-6 font-fira text-xs text-slate-400 bg-slate-900/60 border border-slate-800/80 px-4 py-2.5 rounded-lg" dir="ltr">
+            <div class="p-6 sm:p-7 text-slate-300 flex-grow flex flex-col justify-between">
+                <div class="mb-5 font-fira text-xs text-slate-400 bento-inner px-4 py-2.5 truncate" dir="ltr">
                     <span class="text-blue-400">architect@hakim-alqubati:~$</span> ./initiate_handshake.sh --target="hakimahmed123321@gmail.com"
                 </div>
 
-                <form id="contact-form" class="space-y-5">
-                    <div class="grid md:grid-cols-2 gap-5">
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
                         <div class="flex flex-col gap-1.5">
                             <label class="text-slate-300 font-fira text-xs font-medium" data-key="form_name_label">Input Name:</label>
                             <input type="text" id="contact-name" required
-                                class="bg-[#090D16]/90 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 rounded-lg px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-600 w-full transition-all text-sm"
+                                class="bg-[#060911]/90 border border-white/[0.08] focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 rounded-xl px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-600 w-full transition-all text-sm"
                                 placeholder="Your Name / Company">
                         </div>
                         <div class="flex flex-col gap-1.5">
                             <label class="text-slate-300 font-fira text-xs font-medium" data-key="form_email_label">Input Email:</label>
                             <input type="email" id="contact-email" required
-                                class="bg-[#090D16]/90 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 rounded-lg px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-600 w-full transition-all text-sm"
+                                class="bg-[#060911]/90 border border-white/[0.08] focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 rounded-xl px-4 py-2.5 outline-none text-slate-100 placeholder:text-slate-600 w-full transition-all text-sm"
                                 placeholder="name@company.com">
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-1.5">
                         <label class="text-slate-300 font-fira text-xs font-medium" data-key="form_msg_label">Message Payload (Project / Inquiry):</label>
-                        <textarea id="contact-message" rows="4" required
-                            class="bg-[#090D16]/90 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 outline-none text-slate-100 placeholder:text-slate-600 w-full p-4 rounded-lg transition-all text-sm"
+                        <textarea id="contact-message" rows="3" required
+                            class="bg-[#060911]/90 border border-white/[0.08] focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 outline-none text-slate-100 placeholder:text-slate-600 w-full p-3.5 rounded-xl transition-all text-sm"
                             placeholder="// Describe your ERP, SaaS, or Backend Architecture requirements..."></textarea>
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
                         <button type="submit" id="submit-btn"
-                            class="text-white bg-blue-600 hover:bg-blue-500 font-medium text-sm px-6 py-2.5 rounded-lg shadow-lg shadow-blue-600/20 transition-all cursor-pointer flex items-center gap-2">
+                            class="text-white bg-blue-600 hover:bg-blue-500 font-medium text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/20 transition-all cursor-pointer flex items-center gap-2">
                             <i class="fas fa-paper-plane text-xs"></i>
-                            <span data-key="form_submit_btn">EXECUTE SEND</span>
+                            <span data-key="form_submit_btn">Send via Email</span>
                         </button>
 
                         <button type="button" id="whatsapp-btn"
-                            class="text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 hover:bg-emerald-500/20 font-medium text-sm px-5 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-2">
+                            class="text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 hover:bg-emerald-500/20 font-medium text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all cursor-pointer flex items-center gap-2">
                             <i class="fab fa-whatsapp text-base"></i>
                             <span data-key="form_whatsapp_btn">Send via WhatsApp</span>
                         </button>
@@ -116,5 +140,6 @@
                 </form>
             </div>
         </div>
+
     </div>
 </section>

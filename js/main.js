@@ -388,10 +388,12 @@ function initLanguage() {
     });
 }
 
-// --- 3. Typewriter Effect Logic ---
+// --- 3. Memory-Efficient Typewriter Effect (Pauses When Offscreen) ---
+let isHeroVisible = true;
+
 function typeWriterEffect() {
     const typeElement = document.getElementById('typewriter');
-    if (!typeElement) return;
+    if (!typeElement || !isHeroVisible) return;
 
     const titles = translations[currentLang].hero_titles;
     const currentTitle = titles[typeWriterIndex % titles.length];
@@ -420,103 +422,80 @@ function typeWriterEffect() {
     typeTimer = setTimeout(typeWriterEffect, typeSpeed);
 }
 
-// --- 4. Three.js Background (Subtle Enterprise Ambient Nodes) ---
-function initThreeJS() {
-    const canvas = document.querySelector('#bg-canvas');
-    if (!canvas || typeof THREE === 'undefined') return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 160;
-    const posArray = new Float32Array(particlesCount * 3);
-
-    for (let i = 0; i < particlesCount * 3; i++) {
-        posArray[i] = (Math.random() - 0.5) * 22;
+function initHeroObserver() {
+    const heroSection = document.getElementById('hero-section');
+    if (!heroSection || typeof IntersectionObserver === 'undefined') {
+        typeWriterEffect();
+        return;
     }
 
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isHeroVisible = entry.isIntersecting;
+            if (isHeroVisible) {
+                if (typeTimer) clearTimeout(typeTimer);
+                typeWriterEffect();
+            } else if (typeTimer) {
+                clearTimeout(typeTimer);
+                typeTimer = null;
+            }
+        });
+    }, { threshold: 0.05 });
 
-    const material = new THREE.PointsMaterial({
-        size: 0.03,
-        color: 0x60a5fa,
-        transparent: true,
-        opacity: 0.45,
-    });
+    observer.observe(heroSection);
+}
 
-    const particlesMesh = new THREE.Points(particlesGeometry, material);
-    scene.add(particlesMesh);
+// --- 4. Lightweight Bento Spotlight Hover (rAF-Throttled, Zero Idle Overhead) ---
+function initBentoSpotlight() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
 
-    camera.position.z = 4;
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX / window.innerWidth - 0.5;
-        mouseY = event.clientY / window.innerHeight - 0.5;
-    });
-
-    const clock = new THREE.Clock();
-
-    function animate() {
-        requestAnimationFrame(animate);
-        const elapsedTime = clock.getElapsedTime();
-
-        particlesMesh.rotation.y = elapsedTime * 0.02 + mouseX * 0.12;
-        particlesMesh.rotation.x = mouseY * 0.12;
-
-        renderer.render(scene, camera);
-    }
-    animate();
-
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+    const cards = document.querySelectorAll('.bento-card, .glass-card');
+    cards.forEach(card => {
+        let rafId = null;
+        card.addEventListener('pointermove', (e) => {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                rafId = null;
+            });
+        }, { passive: true });
     });
 }
 
-// --- 5. GSAP Scroll Animations ---
-function initGSAP() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
+// --- 5. Native Hardware-Accelerated Scroll Reveal (Replaces Heavy GSAP + ScrollTrigger) ---
+function initScrollReveal() {
+    const elements = document.querySelectorAll('.gs-reveal, .skill-card');
+    if (!elements.length) return;
 
-    gsap.utils.toArray('.gs-reveal').forEach(elem => {
-        gsap.fromTo(elem,
-            { y: 28, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.75,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: elem,
-                    start: "top 88%",
-                }
-            }
-        );
+    // Assign subtle stagger delays within each section's Bento Grid
+    document.querySelectorAll('section').forEach(section => {
+        const items = section.querySelectorAll('.gs-reveal, .skill-card');
+        items.forEach((el, idx) => {
+            el.style.setProperty('--reveal-delay', `${Math.min(idx * 55, 280)}ms`);
+        });
     });
 
-    gsap.fromTo(".skill-card",
-        { y: 28, opacity: 0 },
-        {
-            scrollTrigger: {
-                trigger: "#skills",
-                start: "top 82%",
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.65,
-            stagger: 0.1,
-            ease: "power2.out"
-        }
-    );
+    if (typeof IntersectionObserver === 'undefined') {
+        elements.forEach(el => el.classList.add('is-visible'));
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Unobserve immediately after revealing to free memory
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -6% 0px',
+        threshold: 0.08
+    });
+
+    elements.forEach(el => revealObserver.observe(el));
 }
 
 // --- 6. Contact Form (Email & WhatsApp Integration) ---
@@ -568,8 +547,8 @@ function initForm() {
 // --- 7. Initialize All Modules ---
 function initAll() {
     initLanguage();
-    typeWriterEffect();
-    initThreeJS();
-    initGSAP();
+    initHeroObserver();
+    initScrollReveal();
+    initBentoSpotlight();
     initForm();
 }

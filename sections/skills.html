@@ -1,163 +1,181 @@
-<section id="skills" class="py-20 px-6 bg-[#0B101B]/70 border-y border-slate-800/60 relative">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-14 gs-reveal">
-            <h2 class="text-2xl md:text-3xl font-orbitron font-bold text-slate-50 mb-3 tracking-tight">
-                <span class="text-blue-400 font-fira text-lg font-semibold me-2">02.</span>
-                <span data-key="section_skills">Technical Skills &amp; Architecture</span>
-            </h2>
-            <p class="text-slate-400 text-xs md:text-sm max-w-2xl mx-auto" data-key="skills_subtitle">
+<section id="skills" class="pt-10 pb-6 relative">
+    <!-- Section Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 gs-reveal">
+        <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/25 text-blue-400 font-fira text-xs font-semibold">02</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-orbitron font-bold text-slate-50 tracking-tight" data-key="section_skills">
+                    Technical Skills &amp; Architecture
+                </h2>
+            </div>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-2xl" data-key="skills_subtitle">
                 Specialized stack for building high-availability ERP systems, multi-tenant SaaS, and normalized database architectures.
             </p>
         </div>
+        <span class="text-[11px] font-fira text-slate-500 hidden md:inline-block shrink-0">BENTO // TECH STACK MATRIX</span>
+    </div>
 
-        <!-- 5 Categorized Skill Cards (Cohesive Enterprise Dark Minimalist Palette) -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 5 Categorized Bento Grid Cells (Asymmetric 12-Column Layout: 7+5 top row, 4+4+4 bottom row) -->
+    <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 md:gap-5 items-stretch">
 
-            <!-- 1. Backend & Frameworks -->
-            <div class="skill-card glass-card p-6 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                <i class="fab fa-laravel text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_1">Backend &amp; Frameworks</h3>
-                                <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_1_sub">Core Ecosystem</span>
-                            </div>
+        <!-- 1. Backend & Frameworks (7 Columns) -->
+        <div class="skill-card md:col-span-6 lg:col-span-7 bento-card bento-grid-bg p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400">
+                            <i class="fab fa-laravel text-xl"></i>
                         </div>
-                        <i class="fab fa-php text-xl text-slate-600"></i>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-slate-100 text-base sm:text-lg" data-key="skill_cat_1">Backend &amp; Frameworks</h3>
+                            <span class="text-[11px] font-fira text-blue-400" data-key="skill_cat_1_sub">Core Ecosystem</span>
+                        </div>
                     </div>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_1_desc">
-                        Architecting clean, modular backend engines, admin panels, reactive full-stack components, and secure APIs.
-                    </p>
+                    <span class="px-2.5 py-1 rounded-lg bg-[#060911]/80 border border-white/[0.06] font-fira text-[11px] text-slate-400">
+                        <i class="fab fa-php text-blue-400 me-1"></i>PHP 8.x
+                    </span>
                 </div>
-                <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-slate-800/70">
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">PHP</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">Laravel</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">FilamentPHP</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300">Livewire</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300">RESTful APIs</span>
+
+                <p class="text-xs sm:text-sm text-slate-300/90 mb-5 leading-relaxed" data-key="skill_cat_1_desc">
+                    Architecting clean, modular backend engines, admin panels, reactive full-stack components, and secure APIs.
+                </p>
+
+                <!-- Mini Architectural Command Bar Widget -->
+                <div class="bento-inner px-3.5 py-2.5 mb-5 flex items-center justify-between text-[11px] font-fira text-slate-400" dir="ltr">
+                    <div class="truncate">
+                        <span class="text-emerald-400">$</span> php artisan erp:architect <span class="text-blue-400">--multi-tenant</span> <span class="text-indigo-400">--filament</span>
+                    </div>
+                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0 ms-2">READY</span>
                 </div>
             </div>
 
-            <!-- 2. Database Architecture -->
-            <div class="skill-card glass-card p-6 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                                <i class="fas fa-database text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_2">Database Architecture</h3>
-                                <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_2_sub">Data Modeling &amp; SQL</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-project-diagram text-lg text-slate-600"></i>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_2_desc">
-                        Designing normalized relational schemas, analyzing complex business logic, and optimizing high-volume queries.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-slate-800/70">
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-indigo-300 font-medium border-indigo-500/30 bg-indigo-500/10" data-key="tag_rel_db">Relational DB Design</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200" data-key="tag_schema_norm">Schema Normalization</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300" data-key="tag_biz_logic">Business Logic Analysis</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300" data-key="tag_query_opt">Query Optimization</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">MySQL</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">PostgreSQL</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-400">SQLite</span>
-                </div>
+            <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-white/[0.06]">
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">PHP</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">Laravel</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">FilamentPHP</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-300">Livewire</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-300">RESTful APIs</span>
             </div>
-
-            <!-- 3. Cloud & Infrastructure -->
-            <div class="skill-card glass-card p-6 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                <i class="fab fa-aws text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_3">Cloud &amp; Infrastructure</h3>
-                                <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_3_sub">AWS &amp; Linux Servers</span>
-                            </div>
-                        </div>
-                        <i class="fab fa-linux text-xl text-slate-600"></i>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_3_desc">
-                        Cloud services integration, AI image recognition (AWS Rekognition), edge protection, and Linux VPS administration.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-slate-800/70">
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">AWS S3</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">AWS DynamoDB</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">AWS Rekognition</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300">Cloudflare</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-300" data-key="tag_linux_vps">Linux Server Admin (VPS)</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-400">aaPanel</span>
-                </div>
-            </div>
-
-            <!-- 4. Frontend Technologies -->
-            <div class="skill-card glass-card p-6 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                                <i class="fas fa-laptop-code text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_4">Frontend Technologies</h3>
-                                <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_4_sub">Responsive UI &amp; Web</span>
-                            </div>
-                        </div>
-                        <i class="fab fa-js text-lg text-slate-600"></i>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_4_desc">
-                        Building clean, responsive dashboards, interactive interfaces, and corporate web platforms.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-slate-800/70">
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">HTML5</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">CSS3</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-indigo-300 font-medium border-indigo-500/30 bg-indigo-500/10">Tailwind CSS</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200">JavaScript</span>
-                </div>
-            </div>
-
-            <!-- 5. Tools & Workflows -->
-            <div class="skill-card glass-card p-6 rounded-2xl flex flex-col justify-between md:col-span-2 lg:col-span-2">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                <i class="fas fa-sliders-h text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_5">Tools, DevOps &amp; Engineering Workflows</h3>
-                                <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_5_sub">Development Environment &amp; Domain Expertise</span>
-                            </div>
-                        </div>
-                        <i class="fab fa-github text-xl text-slate-600"></i>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_5_desc">
-                        Streamlined version control, local development environments, database management, API testing, and enterprise domain workflows.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-slate-800/70">
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200"><i class="fab fa-git-alt me-1.5 text-blue-400"></i>Git</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200"><i class="fab fa-github me-1.5 text-slate-400"></i>GitHub</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200"><i class="fas fa-server me-1.5 text-blue-400"></i>Laragon</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200"><i class="fas fa-table me-1.5 text-indigo-400"></i>TablePlus</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-slate-200"><i class="fas fa-exchange-alt me-1.5 text-blue-400"></i>Insomnia</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10" data-key="tag_fifo">FIFO Inventory Algorithms</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-indigo-300 border-indigo-500/30 bg-indigo-500/10" data-key="tag_multitenant">Multi-Tenant SaaS</span>
-                    <span class="tech-pill px-3 py-1.5 rounded-md text-blue-300 border-blue-500/30 bg-blue-500/10" data-key="tag_hr_payroll">HR &amp; Automated Payroll</span>
-                </div>
-            </div>
-
         </div>
+
+        <!-- 2. Database Architecture (5 Columns) -->
+        <div class="skill-card md:col-span-6 lg:col-span-5 bento-card p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center text-indigo-400">
+                            <i class="fas fa-database text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-slate-100 text-base sm:text-lg" data-key="skill_cat_2">Database Architecture</h3>
+                            <span class="text-[11px] font-fira text-indigo-400" data-key="skill_cat_2_sub">Data Modeling &amp; SQL</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-project-diagram text-lg text-slate-600"></i>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-300/90 mb-5 leading-relaxed" data-key="skill_cat_2_desc">
+                    Designing normalized relational schemas, analyzing complex business logic, and optimizing high-volume queries.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-white/[0.06]">
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-indigo-300 font-medium border-indigo-500/30 bg-indigo-500/10" data-key="tag_rel_db">Relational DB Design</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200" data-key="tag_schema_norm">Schema Normalization</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-300" data-key="tag_biz_logic">Business Logic Analysis</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-300" data-key="tag_query_opt">Query Optimization</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">MySQL</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">PostgreSQL</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-400">SQLite</span>
+            </div>
+        </div>
+
+        <!-- 3. Cloud & Infrastructure (4 Columns) -->
+        <div class="skill-card md:col-span-3 lg:col-span-4 bento-card p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                            <i class="fab fa-aws text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_3">Cloud &amp; Infrastructure</h3>
+                            <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_3_sub">AWS &amp; Linux Servers</span>
+                        </div>
+                    </div>
+                    <i class="fab fa-linux text-xl text-slate-600"></i>
+                </div>
+                <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_3_desc">
+                    Cloud services integration, AI image recognition (AWS Rekognition), edge protection, and Linux VPS administration.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-white/[0.06]">
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">AWS S3</span>
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-blue-300 font-medium border-blue-500/30 bg-blue-500/10">AWS DynamoDB</span>
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-slate-200">AWS Rekognition</span>
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-slate-300">Cloudflare</span>
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-slate-300" data-key="tag_linux_vps">Linux Server Admin (VPS)</span>
+                <span class="tech-pill px-2.5 py-1.5 rounded-lg text-slate-400">aaPanel</span>
+            </div>
+        </div>
+
+        <!-- 4. Frontend Technologies (4 Columns) -->
+        <div class="skill-card md:col-span-3 lg:col-span-4 bento-card p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                            <i class="fas fa-laptop-code text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_4">Frontend Technologies</h3>
+                            <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_4_sub">Responsive UI &amp; Web</span>
+                        </div>
+                    </div>
+                    <i class="fab fa-js text-lg text-slate-600"></i>
+                </div>
+                <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_4_desc">
+                    Building clean, responsive dashboards, interactive interfaces, and corporate web platforms.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 font-fira text-xs pt-4 border-t border-white/[0.06]">
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">HTML5</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">CSS3</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-indigo-300 font-medium border-indigo-500/30 bg-indigo-500/10">Tailwind CSS</span>
+                <span class="tech-pill px-3 py-1.5 rounded-lg text-slate-200">JavaScript</span>
+            </div>
+        </div>
+
+        <!-- 5. Tools, DevOps & Engineering Workflows (4 Columns) -->
+        <div class="skill-card md:col-span-6 lg:col-span-4 bento-card p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-sliders-h text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-slate-100 text-base" data-key="skill_cat_5">Tools, DevOps &amp; Engineering Workflows</h3>
+                            <span class="text-[11px] font-fira text-slate-400" data-key="skill_cat_5_sub">Development Environment &amp; Domain Expertise</span>
+                        </div>
+                    </div>
+                    <i class="fab fa-github text-xl text-slate-600"></i>
+                </div>
+                <p class="text-xs text-slate-400 mb-5 leading-relaxed" data-key="skill_cat_5_desc">
+                    Streamlined version control, local development environments, database management, API testing, and enterprise domain workflows.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 font-fira text-xs pt-4 border-t border-white/[0.06]">
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-slate-200"><i class="fab fa-git-alt me-1 text-blue-400"></i>Git</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-slate-200"><i class="fab fa-github me-1 text-slate-400"></i>GitHub</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-slate-200"><i class="fas fa-server me-1 text-blue-400"></i>Laragon</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-slate-200"><i class="fas fa-table me-1 text-indigo-400"></i>TablePlus</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-slate-200"><i class="fas fa-exchange-alt me-1 text-blue-400"></i>Insomnia</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-blue-300 border-blue-500/30 bg-blue-500/10" data-key="tag_fifo">FIFO Inventory Algorithms</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-indigo-300 border-indigo-500/30 bg-indigo-500/10" data-key="tag_multitenant">Multi-Tenant SaaS</span>
+                <span class="tech-pill px-2.5 py-1 rounded-lg text-emerald-300 border-emerald-500/30 bg-emerald-500/10" data-key="tag_hr_payroll">HR &amp; Automated Payroll</span>
+            </div>
+        </div>
+
     </div>
 </section>

@@ -1,58 +1,63 @@
-<nav class="fixed top-0 w-full z-50 bg-[#090D16]/85 backdrop-blur-xl border-b border-slate-800/80 px-6 py-3.5">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Brand Logo -->
-        <a href="#" class="flex items-center gap-3.5 group">
-            <div
-                class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-sm font-fira font-semibold text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-200">
-                HA
-            </div>
-            <div class="hidden sm:flex flex-col">
-                <span class="text-xs font-orbitron font-bold text-slate-100 tracking-wide" data-key="brand_name">HAKIM ALQUBATI</span>
-                <span class="text-[11px] font-fira text-slate-400" data-key="brand_role">System Architect</span>
-            </div>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-8 text-xs xl:text-sm font-medium">
-            <a href="#about" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_about">Summary</a>
-            <a href="#skills" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_skills">Skills</a>
-            <a href="#experience" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_exp">Experience</a>
-            <a href="#projects" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_projects">ERP &amp; Systems</a>
-            <a href="#education" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_edu">Education</a>
-            <a href="#contact" class="text-slate-400 hover:text-slate-100 transition-colors" data-key="nav_contact">Contact</a>
-        </div>
-
-        <!-- Actions: Hire CTA, Language Switcher & Mobile Menu Toggle -->
-        <div class="flex items-center gap-2.5">
-            <a href="#contact"
-                class="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs shadow-sm shadow-blue-600/20 transition-all">
-                <i class="fas fa-arrow-up-right-from-square text-[10px] opacity-80"></i>
-                <span data-key="nav_hire">Hire Me</span>
+<header class="fixed top-3.5 inset-x-0 z-50 px-4 sm:px-6 lg:px-8 pointer-events-none">
+    <nav class="pointer-events-auto max-w-7xl mx-auto bg-[#0B101D]/85 backdrop-blur-md border border-white/[0.08] rounded-2xl px-4 sm:px-5 py-2.5 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.65)]">
+        <div class="flex justify-between items-center">
+            <!-- Brand Logo Bento Pill -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/10 border border-blue-500/30 flex items-center justify-center text-xs font-fira font-bold text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-200 shadow-inner">
+                    HA
+                </div>
+                <div class="hidden sm:flex flex-col">
+                    <span class="text-xs font-orbitron font-bold text-slate-100 tracking-wide leading-tight" data-key="brand_name">HAKIM ALQUBATI</span>
+                    <span class="text-[10px] font-fira text-slate-400 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        <span data-key="brand_role">System Architect</span>
+                    </span>
+                </div>
             </a>
 
-            <button id="lang-toggle" style="display:none"
-                class="px-3 py-1.5 bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-slate-600 font-fira text-xs rounded-lg transition-all flex items-center gap-1.5 cursor-pointer">
-                <i class="fas fa-globe text-blue-400 text-[11px]"></i>
-                <span id="lang-text">AR</span>
-            </button>
+            <!-- Desktop Bento Pill Navigation -->
+            <div class="hidden lg:flex items-center gap-1 bg-[#060911]/70 border border-white/[0.05] rounded-xl p-1 text-xs font-medium">
+                <a href="#about" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_about">Summary</a>
+                <a href="#skills" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_skills">Skills</a>
+                <a href="#experience" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_exp">Experience</a>
+                <a href="#projects" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_projects">ERP &amp; Systems</a>
+                <a href="#education" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_edu">Education</a>
+                <a href="#contact" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/[0.06] transition-all" data-key="nav_contact">Contact</a>
+            </div>
 
-            <button id="mobile-menu-btn"
-                class="lg:hidden p-2 text-slate-300 hover:text-white border border-slate-800 bg-slate-900/60 rounded-lg transition-colors"
-                aria-label="Toggle Menu">
-                <i class="fas fa-bars text-base"></i>
-            </button>
-        </div>
-    </div>
+            <!-- Actions: Hire CTA, Language Switcher & Mobile Menu Toggle -->
+            <div class="flex items-center gap-2">
+                <a href="#contact"
+                    class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs shadow-sm shadow-blue-600/25 transition-all">
+                    <i class="fas fa-arrow-up-right-from-square text-[10px] opacity-80"></i>
+                    <span data-key="nav_hire">Hire Me</span>
+                </a>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden mt-3.5 pt-3.5 border-t border-slate-800/80">
-        <div class="flex flex-col gap-1.5 text-sm font-medium pb-2">
-            <a href="#about" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_about">Summary</a>
-            <a href="#skills" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_skills">Skills</a>
-            <a href="#experience" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_exp">Experience</a>
-            <a href="#projects" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_projects">ERP &amp; Systems</a>
-            <a href="#education" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_edu">Education</a>
-            <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_contact">Contact</a>
+                <button id="lang-toggle" style="display:none"
+                    class="px-3 py-1.5 bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-slate-600 font-fira text-xs rounded-xl transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i class="fas fa-globe text-blue-400 text-[11px]"></i>
+                    <span id="lang-text">AR</span>
+                </button>
+
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 text-slate-300 hover:text-white border border-white/[0.08] bg-slate-900/70 rounded-xl transition-colors"
+                    aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-sm"></i>
+                </button>
+            </div>
         </div>
-    </div>
-</nav>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 pt-3 border-t border-slate-800/80">
+            <div class="grid grid-cols-2 gap-1.5 text-xs font-medium pb-1">
+                <a href="#about" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_about">Summary</a>
+                <a href="#skills" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_skills">Skills</a>
+                <a href="#experience" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_exp">Experience</a>
+                <a href="#projects" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_projects">ERP &amp; Systems</a>
+                <a href="#education" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_edu">Education</a>
+                <a href="#contact" class="mobile-nav-link py-2 px-3 rounded-xl bg-white/[0.02] text-slate-300 hover:bg-slate-800/60 hover:text-white transition-colors" data-key="nav_contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
